@@ -4,14 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>FRVB — Rwanda Volleyball Federation</title>
-  <meta
-    name="description"
-    content="Official Rwanda Volleyball Federation website concept featuring live scores, competitions, national teams, news, and events."
-  />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400&display=swap"
-    rel="stylesheet"
-  />
+  <meta name="description" content="Official Rwanda Volleyball Federation website concept featuring live scores, competitions, national teams, news, and events." />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400&display=swap" rel="stylesheet" />
 
   <style>
     :root {
@@ -35,57 +29,27 @@
       --nav-height: 72px;
     }
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      background: var(--dark);
-      color: var(--text);
-      font-family: "Barlow", sans-serif;
-      overflow-x: hidden;
-    }
-
-    body.menu-open {
-      overflow: hidden;
-    }
-
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    img {
-      max-width: 100%;
-      display: block;
-    }
-
-    ul {
-      list-style: none;
-    }
-
-    button {
-      font: inherit;
-    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { background: var(--dark); color: var(--text); font-family: "Barlow", sans-serif; overflow-x: hidden; }
+    body.menu-open { overflow: hidden; }
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+    ul { list-style: none; }
+    button { font: inherit; }
 
     .container {
       width: min(100% - 40px, var(--max-width));
       margin-inline: auto;
     }
 
+    /* ── PROPOSAL BANNER ── */
     .proposal-banner {
       background: linear-gradient(90deg, var(--blue), var(--blue-2));
       padding: 10px 20px;
       font-size: 13px;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
     }
-
     .proposal-inner {
       width: min(100% - 20px, var(--max-width));
       margin: 0 auto;
@@ -95,7 +59,6 @@
       gap: 12px;
       flex-wrap: wrap;
     }
-
     .proposal-badge {
       background: var(--gold);
       color: var(--dark);
@@ -107,16 +70,16 @@
       text-transform: uppercase;
     }
 
+    /* ── NAV ── */
     nav {
       position: sticky;
       top: 0;
       z-index: 1000;
       height: var(--nav-height);
-      background: rgba(10, 13, 20, 0.92);
+      background: rgba(10,13,20,0.92);
       backdrop-filter: blur(14px);
       border-bottom: 1px solid var(--border);
     }
-
     .nav-inner {
       width: min(100% - 40px, var(--max-width));
       height: 100%;
@@ -126,198 +89,82 @@
       justify-content: space-between;
       gap: 20px;
     }
-
-    .nav-logo {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      min-width: max-content;
-    }
-
+    .nav-logo { display: flex; align-items: center; gap: 12px; min-width: max-content; }
     .logo-badge {
-      width: 44px;
-      height: 44px;
+      width: 44px; height: 44px;
       border-radius: 10px;
       border: 2px solid var(--gold);
       background: linear-gradient(135deg, var(--blue), #0b4ec6);
-      display: grid;
-      place-items: center;
+      display: grid; place-items: center;
       font-family: "Bebas Neue", sans-serif;
-      font-size: 16px;
-      color: var(--gold);
-      letter-spacing: 1px;
+      font-size: 16px; color: var(--gold); letter-spacing: 1px;
       box-shadow: var(--shadow);
     }
+    .logo-text { font-family: "Bebas Neue", sans-serif; font-size: 24px; letter-spacing: 2px; color: var(--gold); line-height: 1; }
+    .logo-sub { font-size: 10px; color: var(--muted); letter-spacing: 1.4px; text-transform: uppercase; margin-top: 2px; }
 
-    .logo-text {
-      font-family: "Bebas Neue", sans-serif;
-      font-size: 24px;
-      letter-spacing: 2px;
-      color: var(--gold);
-      line-height: 1;
-    }
-
-    .logo-sub {
-      font-size: 10px;
-      color: var(--muted);
-      letter-spacing: 1.4px;
-      text-transform: uppercase;
-      margin-top: 2px;
-    }
-
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 28px;
-    }
-
+    .nav-links { display: flex; align-items: center; gap: 28px; }
     .nav-links a {
-      font-size: 14px;
-      font-weight: 700;
-      color: var(--muted);
-      letter-spacing: 0.3px;
-      position: relative;
+      font-size: 14px; font-weight: 700; color: var(--muted);
+      letter-spacing: 0.3px; position: relative;
       transition: color 0.2s ease;
     }
-
     .nav-links a::after {
-      content: "";
-      position: absolute;
-      left: 0;
-      bottom: -9px;
-      width: 100%;
-      height: 2px;
-      background: var(--gold);
-      transform: scaleX(0);
-      transform-origin: left;
+      content: ""; position: absolute; left: 0; bottom: -9px;
+      width: 100%; height: 2px; background: var(--gold);
+      transform: scaleX(0); transform-origin: left;
       transition: transform 0.2s ease;
     }
+    .nav-links a:hover, .nav-links a.active { color: var(--text); }
+    .nav-links a.active::after, .nav-links a:hover::after { transform: scaleX(1); }
 
-    .nav-links a:hover,
-    .nav-links a.active {
-      color: var(--text);
-    }
-
-    .nav-links a.active::after,
-    .nav-links a:hover::after {
-      transform: scaleX(1);
-    }
-
-    .nav-actions {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
-
-    .nav-cta,
-    .btn-primary,
-    .btn-outline,
-    .ghost-link {
+    .nav-actions { display: flex; align-items: center; gap: 12px; }
+    .nav-cta, .btn-primary, .btn-outline, .ghost-link {
       transition: transform 0.18s ease, opacity 0.18s ease, border-color 0.18s ease, background 0.18s ease;
     }
-
     .nav-cta {
-      background: var(--gold);
-      color: var(--dark);
-      padding: 11px 18px;
-      border-radius: 8px;
-      font-size: 13px;
-      font-weight: 900;
-      letter-spacing: 0.5px;
+      background: var(--gold); color: var(--dark);
+      padding: 11px 18px; border-radius: 8px;
+      font-size: 13px; font-weight: 900; letter-spacing: 0.5px;
     }
-
-    .nav-cta:hover,
-    .btn-primary:hover,
-    .btn-outline:hover,
-    .ghost-link:hover {
-      transform: translateY(-2px);
-    }
+    .nav-cta:hover, .btn-primary:hover, .btn-outline:hover, .ghost-link:hover { transform: translateY(-2px); }
 
     .hamburger {
-      display: none;
-      width: 42px;
-      height: 42px;
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      background: transparent;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-      flex-direction: column;
-      gap: 5px;
+      display: none; width: 42px; height: 42px;
+      border: 1px solid var(--border); border-radius: 10px;
+      background: transparent; align-items: center; justify-content: center;
+      cursor: pointer; flex-direction: column; gap: 5px;
     }
-
-    .hamburger span {
-      width: 20px;
-      height: 2px;
-      border-radius: 2px;
-      background: var(--text);
-      transition: 0.25s ease;
-    }
-
-    .hamburger.open span:nth-child(1) {
-      transform: translateY(7px) rotate(45deg);
-    }
-
-    .hamburger.open span:nth-child(2) {
-      opacity: 0;
-    }
-
-    .hamburger.open span:nth-child(3) {
-      transform: translateY(-7px) rotate(-45deg);
-    }
+    .hamburger span { width: 20px; height: 2px; border-radius: 2px; background: var(--text); transition: 0.25s ease; }
+    .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .hamburger.open span:nth-child(2) { opacity: 0; }
+    .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
     .mobile-nav {
       position: fixed;
       top: calc(44px + var(--nav-height));
-      left: 0;
-      right: 0;
-      background: rgba(10, 13, 20, 0.98);
+      left: 0; right: 0;
+      background: rgba(10,13,20,0.98);
       backdrop-filter: blur(18px);
       border-bottom: 1px solid var(--border);
       padding: 18px 20px 26px;
-      display: none;
-      flex-direction: column;
-      gap: 2px;
-      z-index: 999;
+      display: none; flex-direction: column; gap: 2px; z-index: 999;
     }
+    .mobile-nav.open { display: flex; }
+    .mobile-nav a { padding: 14px 2px; font-size: 17px; font-weight: 700; color: var(--text); border-bottom: 1px solid var(--border); }
+    .mobile-nav .mobile-cta { margin-top: 12px; background: var(--gold); color: var(--dark); border-radius: 8px; padding: 14px; text-align: center; font-weight: 900; border-bottom: none; }
 
-    .mobile-nav.open {
-      display: flex;
-    }
-
-    .mobile-nav a {
-      padding: 14px 2px;
-      font-size: 17px;
-      font-weight: 700;
-      color: var(--text);
-      border-bottom: 1px solid var(--border);
-    }
-
-    .mobile-nav .mobile-cta {
-      margin-top: 12px;
-      background: var(--gold);
-      color: var(--dark);
-      border-radius: 8px;
-      padding: 14px;
-      text-align: center;
-      font-weight: 900;
-      border-bottom: none;
-    }
-
+    /* ── HERO ── */
     .hero {
-      position: relative;
-      overflow: hidden;
+      position: relative; overflow: hidden;
       min-height: calc(100vh - 44px - var(--nav-height));
-      display: flex;
-      align-items: center;
+      display: flex; align-items: center;
       padding: 48px 0 72px;
       background:
-        radial-gradient(ellipse at 75% 30%, rgba(0, 61, 165, 0.32), transparent 45%),
-        radial-gradient(ellipse at 20% 90%, rgba(0, 154, 68, 0.18), transparent 40%),
+        radial-gradient(ellipse at 75% 30%, rgba(0,61,165,0.32), transparent 45%),
+        radial-gradient(ellipse at 20% 90%, rgba(0,154,68,0.18), transparent 40%),
         linear-gradient(to bottom, var(--darker) 0%, #0d1424 100%);
     }
-
     .hero-grid {
       width: min(100% - 40px, var(--max-width));
       margin: 0 auto;
@@ -325,2595 +172,50 @@
       grid-template-columns: 1.2fr 0.8fr;
       align-items: center;
       gap: 32px;
-      position: relative;
-      z-index: 1;
+      position: relative; z-index: 1;
     }
-
-    .hero-net {
-      position: absolute;
-      inset: 0;
-      pointer-events: none;
-      opacity: 0.07;
-    }
-
-    .hero-net svg {
-      width: 100%;
-      height: 100%;
-    }
-
-    .hero-copy {
-      max-width: 680px;
-      position: relative;
-      z-index: 2;
-    }
-
+    .hero-net { position: absolute; inset: 0; pointer-events: none; opacity: 0.07; }
+    .hero-net svg { width: 100%; height: 100%; }
+    .hero-copy { max-width: 680px; position: relative; z-index: 2; }
     .hero-label {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      border: 1px solid rgba(232, 17, 45, 0.28);
-      background: rgba(232, 17, 45, 0.12);
-      color: #ff8290;
-      padding: 7px 14px;
-      border-radius: 999px;
-      font-size: 12px;
-      font-weight: 700;
-      margin-bottom: 18px;
+      display: inline-flex; align-items: center; gap: 8px;
+      border: 1px solid rgba(232,17,45,0.28);
+      background: rgba(232,17,45,0.12); color: #ff8290;
+      padding: 7px 14px; border-radius: 999px;
+      font-size: 12px; font-weight: 700; margin-bottom: 18px;
       animation: fadeUp 0.55s ease both;
     }
-
-    .live-dot {
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      background: var(--red);
-      animation: pulse 1.5s infinite;
-    }
+    .live-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--red); animation: pulse 1.5s infinite; }
 
     .hero h1 {
       font-family: "Bebas Neue", sans-serif;
       font-size: clamp(56px, 9vw, 106px);
-      line-height: 0.9;
-      letter-spacing: 2px;
-      margin-bottom: 18px;
+      line-height: 0.9; letter-spacing: 2px; margin-bottom: 18px;
       animation: fadeUp 0.55s 0.08s ease both;
     }
+    .hero h1 span { color: var(--gold); display: block; }
+    .hero-desc { font-size: 17px; line-height: 1.7; color: var(--muted); max-width: 620px; margin-bottom: 28px; animation: fadeUp 0.55s 0.16s ease both; }
+    .hero-btns { display: flex; flex-wrap: wrap; gap: 14px; margin-bottom: 30px; animation: fadeUp 0.55s 0.24s ease both; }
+    .btn-primary { background: linear-gradient(135deg, var(--blue), var(--blue-2)); color: var(--text); padding: 15px 24px; border-radius: 10px; font-size: 14px; font-weight: 800; box-shadow: var(--shadow); }
+    .btn-outline { border: 1px solid var(--glass-2); color: var(--text); padding: 15px 24px; border-radius: 10px; font-size: 14px; font-weight: 800; background: rgba(255,255,255,0.02); }
+    .btn-outline:hover { border-color: var(--gold); }
 
-    .hero h1 span {
-      color: var(--gold);
-      display: block;
-    }
+    .hero-stats { display: flex; gap: 18px; flex-wrap: wrap; animation: fadeUp 0.55s 0.32s ease both; }
+    .stat-item { min-width: 140px; padding: 16px 18px; border-radius: 14px; border: 1px solid var(--border); background: rgba(255,255,255,0.04); }
+    .stat-num { font-family: "Bebas Neue", sans-serif; font-size: 42px; line-height: 1; color: var(--gold); }
+    .stat-label { font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: 1.2px; margin-top: 4px; }
 
-    .hero-desc {
-      font-size: 17px;
-      line-height: 1.7;
-      color: var(--muted);
-      max-width: 620px;
-      margin-bottom: 28px;
-      animation: fadeUp 0.55s 0.16s ease both;
-    }
-
-    .hero-btns {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 14px;
-      margin-bottom: 30px;
-      animation: fadeUp 0.55s 0.24s ease both;
-    }
-
-    .btn-primary {
-      background: linear-gradient(135deg, var(--blue), var(--blue-2));
-      color: var(--text);
-      padding: 15px 24px;
-      border-radius: 10px;
-      font-size: 14px;
-      font-weight: 800;
-      box-shadow: var(--shadow);
-    }
-
-    .btn-outline {
-      border: 1px solid var(--glass-2);
-      color: var(--text);
-      padding: 15px 24px;
-      border-radius: 10px;
-      font-size: 14px;
-      font-weight: 800;
-      background: rgba(255, 255, 255, 0.02);
-    }
-
-    .btn-outline:hover {
-      border-color: var(--gold);
-    }
-
-    .hero-stats {
-      display: flex;
-      gap: 18px;
-      flex-wrap: wrap;
-      animation: fadeUp 0.55s 0.32s ease both;
-    }
-
-    .stat-item {
-      min-width: 140px;
-      padding: 16px 18px;
-      border-radius: 14px;
-      border: 1px solid var(--border);
-      background: rgba(255, 255, 255, 0.04);
-    }
-
-    .stat-num {
-      font-family: "Bebas Neue", sans-serif;
-      font-size: 42px;
-      line-height: 1;
-      color: var(--gold);
-    }
-
-    .stat-label {
-      font-size: 11px;
-      color: var(--muted);
-      text-transform: uppercase;
-      letter-spacing: 1.2px;
-      margin-top: 4px;
-    }
-
+    /* ── HERO VISUAL / BALL ── */
     .hero-visual {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      position: relative;
-      min-height: 420px;
+      display: flex; justify-content: center; align-items: center;
+      position: relative; min-height: 420px;
+      perspective: 1000px;
     }
-
     .visual-ring {
-      position: absolute;
-      width: 430px;
-      height: 430px;
-      border-radius: 50%;
+      position: absolute; width: 430px; height: 430px; border-radius: 50%;
       background:
         radial-gradient(circle at 30% 30%, rgba(255,255,255,0.16), transparent 28%),
-        radial-gradient(circle at 50% 50%, rgba(255, 209, 0, 0.13), transparent 55%);
-      border: 1px solid rgba(255,255,255,0.06);
-      filter: blur(1px);
-    }
-
-    .volleyball {
-      width: min(360px, 80vw);
-      animation: floatBall 5s ease-in-out infinite;
-      filter: drop-shadow(0 30px 45px rgba(0, 0, 0, 0.35));
-      z-index: 1;
-    }
-
-    .hero-mini-card {
-      position: absolute;
-      border: 1px solid var(--border);
-      background: rgba(9, 12, 20, 0.82);
-      backdrop-filter: blur(12px);
-      border-radius: 14px;
-      padding: 14px 16px;
-      box-shadow: var(--shadow);
-      min-width: 160px;
-    }
-
-    .hero-mini-card.top {
-      top: 30px;
-      left: 10px;
-    }
-
-    .hero-mini-card.bottom {
-      right: 0;
-      bottom: 24px;
-    }
-
-    .mini-label {
-      font-size: 11px;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      color: var(--muted);
-      margin-bottom: 6px;
-    }
-
-    .mini-value {
-      font-size: 22px;
-      font-weight: 900;
-      color: var(--gold);
-      line-height: 1;
-      margin-bottom: 4px;
-    }
-
-    .mini-copy {
-      font-size: 12px;
-      color: var(--muted);
-      line-height: 1.45;
-    }
-
-    .ticker {
-      background: var(--gold);
-      color: var(--dark);
-      overflow: hidden;
-      white-space: nowrap;
-      height: 42px;
-      display: flex;
-      align-items: center;
-      border-top: 1px solid rgba(0,0,0,0.08);
-      border-bottom: 1px solid rgba(0,0,0,0.08);
-    }
-
-    .ticker-track {
-      display: inline-flex;
-      min-width: max-content;
-      animation: tickerScroll 32s linear infinite;
-    }
-
-    .ticker-item {
-      font-size: 13px;
-      font-weight: 800;
-      padding: 0 28px;
-    }
-
-    .ticker-item .dot {
-      margin-left: 28px;
-      color: var(--blue);
-    }
-
-    main section {
-      padding: 84px 0;
-    }
-
-    .section-head {
-      display: flex;
-      justify-content: space-between;
-      align-items: end;
-      gap: 20px;
-      margin-bottom: 34px;
-      flex-wrap: wrap;
-    }
-
-    .section-label {
-      font-size: 12px;
-      font-weight: 800;
-      color: var(--gold);
-      text-transform: uppercase;
-      letter-spacing: 3px;
-      margin-bottom: 8px;
-    }
-
-    .section-title {
-      font-family: "Bebas Neue", sans-serif;
-      font-size: clamp(38px, 5vw, 56px);
-      line-height: 0.95;
-      letter-spacing: 1px;
-    }
-
-    .section-subtitle {
-      max-width: 560px;
-      color: var(--muted);
-      line-height: 1.7;
-      font-size: 15px;
-    }
-
-    .ghost-link {
-      color: var(--text);
-      border: 1px solid var(--border);
-      border-radius: 999px;
-      padding: 10px 16px;
-      font-size: 13px;
-      font-weight: 800;
-      white-space: nowrap;
-    }
-
-    .scores-section,
-    .teams-section,
-    .calendar-section {
-      background: var(--mid);
-    }
-
-    .scores-grid,
-    .competitions-grid,
-    .news-grid,
-    .teams-grid,
-    .calendar-grid,
-    .footer-top {
-      display: grid;
-      gap: 18px;
-    }
-
-    .scores-grid {
-      grid-template-columns: repeat(3, 1fr);
-    }
-
-    .score-card,
-    .competition-card,
-    .news-featured,
-    .news-item,
-    .team-card,
-    .calendar-card {
-      background: var(--glass);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      transition: transform 0.22s ease, border-color 0.22s ease, background 0.22s ease;
-    }
-
-    .score-card:hover,
-    .competition-card:hover,
-    .news-featured:hover,
-    .news-item:hover,
-    .team-card:hover,
-    .calendar-card:hover {
-      transform: translateY(-4px);
-      border-color: rgba(255, 209, 0, 0.24);
-    }
-
-    .score-card {
-      padding: 24px;
-    }
-
-    .score-card.live {
-      border-color: rgba(232, 17, 45, 0.45);
-    }
-
-    .score-meta {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 12px;
-      flex-wrap: wrap;
-      margin-bottom: 20px;
-    }
-
-    .score-league {
-      font-size: 11px;
-      color: var(--muted);
-      text-transform: uppercase;
-      letter-spacing: 1.2px;
-    }
-
-    .live-badge,
-    .upcoming-badge,
-    .completed-badge {
-      font-size: 10px;
-      font-weight: 900;
-      letter-spacing: 1px;
-      padding: 4px 10px;
-      border-radius: 999px;
-      text-transform: uppercase;
-    }
-
-    .live-badge {
-      background: var(--red);
-      color: #fff;
-    }
-
-    .upcoming-badge {
-      background: var(--blue);
-      color: #fff;
-    }
-
-    .completed-badge {
-      background: rgba(255,255,255,0.05);
-      color: var(--muted);
-      border: 1px solid var(--border);
-    }
-
-    .score-teams {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 14px;
-      margin-bottom: 14px;
-    }
-
-    .team-info {
-      flex: 1;
-    }
-
-    .team-info.right {
-      text-align: right;
-    }
-
-    .team-flag {
-      font-size: 28px;
-      margin-bottom: 6px;
-    }
-
-    .team-name {
-      font-size: 14px;
-      font-weight: 800;
-      line-height: 1.35;
-    }
-
-    .score-divider {
-      text-align: center;
-      flex-shrink: 0;
-    }
-
-    .score-num {
-      font-family: "Bebas Neue", sans-serif;
-      font-size: 42px;
-      line-height: 1;
-      letter-spacing: 1px;
-    }
-
-    .score-vs {
-      color: var(--muted);
-      font-size: 11px;
-      letter-spacing: 1px;
-      margin-top: 4px;
-    }
-
-    .score-time {
-      color: var(--muted);
-      font-size: 12px;
-    }
-
-    .competitions-grid {
-      grid-template-columns: repeat(3, 1fr);
-    }
-
-    .competition-card {
-      padding: 24px;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .competition-card::before {
-      content: "";
-      position: absolute;
-      inset: 0 auto 0 0;
-      width: 4px;
-      background: linear-gradient(to bottom, var(--gold), var(--green));
-    }
-
-    .competition-tag {
-      display: inline-block;
-      font-size: 11px;
-      font-weight: 800;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 14px;
-    }
-
-    .competition-card h3 {
-      font-size: 22px;
-      line-height: 1.15;
-      margin-bottom: 10px;
-    }
-
-    .competition-card p {
-      color: var(--muted);
-      line-height: 1.65;
-      font-size: 14px;
-      margin-bottom: 18px;
-    }
-
-    .competition-meta {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-    }
-
-    .competition-meta span {
-      font-size: 12px;
-      color: var(--text);
-      background: rgba(255,255,255,0.04);
-      border: 1px solid var(--border);
-      border-radius: 999px;
-      padding: 7px 11px;
-    }
-
-    .news-grid {
-      grid-template-columns: 1.5fr 1fr;
-      align-items: stretch;
-    }
-
-    .news-featured {
-      overflow: hidden;
-    }
-
-    .news-img-bg {
-      height: 250px;
-      background: linear-gradient(135deg, var(--blue), var(--green));
-      display: grid;
-      place-items: center;
-      font-size: 72px;
-    }
-
-    .news-content {
-      padding: 24px;
-    }
-
-    .news-cat {
-      display: inline-block;
-      background: rgba(0, 61, 165, 0.28);
-      color: #8bb0ff;
-      border-radius: 999px;
-      padding: 5px 10px;
-      font-size: 11px;
-      font-weight: 800;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      margin-bottom: 14px;
-    }
-
-    .news-content h3 {
-      font-size: 24px;
-      line-height: 1.25;
-      margin-bottom: 10px;
-    }
-
-    .news-content p {
-      color: var(--muted);
-      line-height: 1.7;
-      font-size: 15px;
-      margin-bottom: 16px;
-    }
-
-    .news-date {
-      font-size: 12px;
-      color: var(--muted);
-    }
-
-    .news-list {
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-    }
-
-    .news-item {
-      padding: 18px;
-    }
-
-    .news-item-cat {
-      font-size: 11px;
-      font-weight: 800;
-      color: var(--gold);
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      margin-bottom: 8px;
-    }
-
-    .news-item h4 {
-      font-size: 15px;
-      line-height: 1.45;
-      margin-bottom: 10px;
-    }
-
-    .news-item-date {
-      font-size: 12px;
-      color: var(--muted);
-    }
-
-    .teams-tabs {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-bottom: 28px;
-    }
-
-    .tab-btn {
-      border: 1px solid var(--border);
-      background: var(--glass);
-      color: var(--muted);
-      padding: 10px 18px;
-      border-radius: 999px;
-      font-size: 13px;
-      font-weight: 800;
-      cursor: pointer;
-    }
-
-    .tab-btn.active,
-    .tab-btn:hover {
-      background: var(--blue);
-      border-color: var(--blue);
-      color: var(--text);
-    }
-
-    .teams-grid {
-      grid-template-columns: repeat(4, 1fr);
-    }
-
-    .team-card {
-      padding: 28px 20px;
-      text-align: center;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .team-card::before {
-      content: "";
-      position: absolute;
-      left: 0;
-      right: 0;
-      top: 0;
-      height: 3px;
-      background: linear-gradient(90deg, var(--blue), var(--green), var(--gold));
-      transform: scaleX(0);
-      transition: transform 0.25s ease;
-    }
-
-    .team-card:hover::before {
-      transform: scaleX(1);
-    }
-
-    .team-emoji {
-      font-size: 40px;
-      display: inline-block;
-      margin-bottom: 14px;
-    }
-
-    .team-card h3 {
-      font-size: 18px;
-      margin-bottom: 6px;
-    }
-
-    .team-card p {
-      font-size: 13px;
-      color: var(--muted);
-      line-height: 1.6;
-      margin-bottom: 14px;
-    }
-
-    .team-record {
-      font-family: "Bebas Neue", sans-serif;
-      font-size: 34px;
-      line-height: 1;
-      color: var(--gold);
-    }
-
-    .team-record-label {
-      font-size: 11px;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      color: var(--muted);
-      margin-top: 4px;
-    }
-
-    .calendar-grid {
-      grid-template-columns: repeat(3, 1fr);
-    }
-
-    .calendar-card {
-      padding: 22px;
-    }
-
-    .calendar-date {
-      display: inline-block;
-      background: rgba(255, 209, 0, 0.12);
-      color: var(--gold);
-      border: 1px solid rgba(255, 209, 0, 0.18);
-      padding: 7px 12px;
-      border-radius: 999px;
-      font-size: 11px;
-      font-weight: 900;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-      margin-bottom: 14px;
-    }
-
-    .calendar-card h3 {
-      font-size: 19px;
-      line-height: 1.3;
-      margin-bottom: 8px;
-    }
-
-    .calendar-card p {
-      color: var(--muted);
-      line-height: 1.7;
-      font-size: 14px;
-      margin-bottom: 14px;
-    }
-
-    .calendar-meta {
-      font-size: 12px;
-      color: var(--text);
-      display: flex;
-      flex-direction: column;
-      gap: 6px;
-    }
-
-    footer {
-      background: var(--darker);
-      border-top: 1px solid var(--border);
-      padding: 64px 0 28px;
-    }
-
-    .footer-top {
-      grid-template-columns: 2fr 1fr 1fr 1fr;
-      margin-bottom: 34px;
-    }
-
-    .footer-brand p {
-      color: var(--muted);
-      line-height: 1.8;
-      font-size: 14px;
-      max-width: 460px;
-      margin: 14px 0 20px;
-    }
-
-    .footer-col h4 {
-      font-size: 12px;
-      color: var(--gold);
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      margin-bottom: 14px;
-    }
-
-    .footer-col ul {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-    }
-
-    .footer-col a {
-      color: var(--muted);
-      font-size: 14px;
-    }
-
-    .footer-col a:hover {
-      color: var(--text);
-    }
-
-    .social-links {
-      display: flex;
-      gap: 10px;
-      flex-wrap: wrap;
-    }
-
-    .social-link {
-      width: 38px;
-      height: 38px;
-      display: grid;
-      place-items: center;
-      border-radius: 10px;
-      background: var(--glass);
-      border: 1px solid var(--border);
-      font-size: 16px;
-    }
-
-    .social-link:hover {
-      border-color: var(--gold);
-      background: rgba(255, 209, 0, 0.08);
-    }
-
-    .footer-bottom {
-      border-top: 1px solid var(--border);
-      padding-top: 20px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 14px;
-      flex-wrap: wrap;
-    }
-
-    .footer-bottom p {
-      color: var(--muted);
-      font-size: 13px;
-    }
-
-    .reveal {
-      opacity: 0;
-      transform: translateY(26px);
-      transition: opacity 0.7s ease, transform 0.7s ease;
-    }
-
-    .reveal.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    @keyframes pulse {
-      0%, 100% { opacity: 1; }
-      50% { opacity: 0.35; }
-    }
-
-    @keyframes fadeUp {
-      from {
-        opacity: 0;
-        transform: translateY(26px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    @keyframes floatBall {
-      0%, 100% {
-        transform: translateY(0) rotate(0deg);
-      }
-      50% {
-        transform: translateY(-16px) rotate(12deg);
-      }
-    }
-
-    @keyframes tickerScroll {
-      from { transform: translateX(0); }
-      to { transform: translateX(-50%); }
-    }
-
-    @media (max-width: 1100px) {
-      .hero-grid,
-      .news-grid,
-      .scores-grid,
-      .competitions-grid,
-      .calendar-grid,
-      .teams-grid,
-      .footer-top {
-        grid-template-columns: 1fr 1fr;
-      }
-
-      .hero-grid {
-        align-items: start;
-      }
-
-      .hero-copy {
-        max-width: 100%;
-      }
-
-      .footer-top {
-        grid-template-columns: 2fr 1fr 1fr;
-      }
-    }
-
-    @media (max-width: 860px) {
-      .nav-links,
-      .nav-cta {
-        display: none;
-      }
-
-      .hamburger {
-        display: flex;
-      }
-
-      .hero {
-        padding: 42px 0 56px;
-      }
-
-      .hero-grid,
-      .news-grid,
-      .scores-grid,
-      .competitions-grid,
-      .calendar-grid,
-      .teams-grid,
-      .footer-top {
-        grid-template-columns: 1fr;
-      }
-
-      .hero-visual {
-        min-height: 320px;
-      }
-
-      .visual-ring {
-        width: 320px;
-        height: 320px;
-      }
-
-      .hero-mini-card.top {
-        top: 6px;
-        left: 0;
-      }
-
-      .hero-mini-card.bottom {
-        right: 0;
-        bottom: 0;
-      }
-
-      main section {
-        padding: 66px 0;
-      }
-    }
-
-    @media (max-width: 640px) {
-      .container,
-      .nav-inner {
-        width: min(100% - 24px, var(--max-width));
-      }
-
-      .proposal-banner {
-        padding-inline: 12px;
-      }
-
-      .hero h1 {
-        font-size: 54px;
-      }
-
-      .hero-desc {
-        font-size: 15px;
-      }
-
-      .hero-btns {
-        flex-direction: column;
-      }
-
-      .btn-primary,
-      .btn-outline {
-        text-align: center;
-      }
-
-      .score-teams {
-        gap: 8px;
-      }
-
-      .score-num {
-        font-size: 34px;
-      }
-
-      .news-img-bg {
-        height: 180px;
-        font-size: 54px;
-      }
-
-      .hero-mini-card {
-        min-width: 130px;
-        padding: 12px 14px;
-      }
-
-      .footer-bottom {
-        flex-direction: column;
-        text-align: center;
-      }
-    }
-  </style>
-</head>
-<body>
-  <div class="proposal-banner">
-    <div class="proposal-inner">
-      <p><strong>Website Redesign Proposal</strong> — Prepared for Rwanda Volleyball Federation (FRVB)</p>
-      <div class="proposal-badge">Demo Mockup</div>
-    </div>
-  </div>
-
-  <nav aria-label="Main navigation">
-    <div class="nav-inner">
-      <a href="#top" class="nav-logo" aria-label="FRVB Home">
-        <div class="logo-badge">FRVB</div>
-        <div>
-          <div class="logo-text">FRVB</div>
-          <div class="logo-sub">Rwanda Volleyball</div>
-        </div>
-      </a>
-
-      <div class="nav-links" id="desktopNav">
-        <a href="#teams">Teams</a>
-        <a href="#competitions">Competitions</a>
-        <a href="#news">News</a>
-        <a href="#calendar">Calendar</a>
-        <a href="#about">About</a>
-      </div>
-
-      <div class="nav-actions">
-        <a href="#calendar" class="nav-cta">Get Tickets</a>
-        <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobileNav">
-          <span></span><span></span><span></span>
-        </button>
-      </div>
-    </div>
-  </nav>
-
-  <div class="mobile-nav" id="mobileNav">
-    <a href="#teams">Teams</a>
-    <a href="#competitions">Competitions</a>
-    <a href="#news">News</a>
-    <a href="#calendar">Calendar</a>
-    <a href="#about">About</a>
-    <a href="#calendar" class="mobile-cta">Get Tickets</a>
-  </div>
-
-  <header class="hero" id="top">
-    <div class="hero-net" aria-hidden="true">
-      <svg viewBox="0 0 1200 800" preserveAspectRatio="none">
-        <defs>
-          <pattern id="net" width="42" height="42" patternUnits="userSpaceOnUse">
-            <path d="M0 0 L42 42 M42 0 L0 42 M21 0 L21 42 M0 21 L42 21" stroke="white" stroke-width="0.45" fill="none"/>
-          </pattern>
-        </defs>
-        <rect width="1200" height="800" fill="url(#net)"></rect>
-      </svg>
-    </div>
-
-    <div class="hero-grid">
-      <div class="hero-copy">
-        <div class="hero-label">
-          <span class="live-dot"></span>
-          It’s Official! The Africa Men’s Club Championship 2026 is coming to Kigali 🇷🇼
-        </div>
-
-        <h1>Rwanda <span>Volleyball</span></h1>
-
-        <p class="hero-desc">
-          The official home of the Rwanda Volleyball Federation. Follow live scores, national teams,
-          domestic competitions, tournament updates, and the latest stories shaping volleyball in Rwanda.
-        </p>
-
-        <div class="hero-btns">
-          <a href="#match-centre" class="btn-primary">View Live Scores</a>
-          <a href="#competitions" class="btn-outline">Explore Competitions</a>
-        </div>
-
-        <div class="hero-stats">
-          <div class="stat-item">
-            <div class="stat-num">24</div>
-            <div class="stat-label">Active Clubs</div>
-          </div>
-          <div class="stat-item">
-            <div class="stat-num">8</div>
-            <div class="stat-label">National Teams</div>
-          </div>
-          <div class="stat-item">
-            <div class="stat-num">340+</div>
-            <div class="stat-label">Athletes</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="hero-visual" aria-hidden="true">
-        <div class="visual-ring"></div>
-
-        <div class="hero-mini-card top">
-          <div class="mini-label">Live Match</div>
-          <div class="mini-value">APR 2–1 REG</div>
-          <div class="mini-copy">National League Men · Set 3 ongoing</div>
-        </div>
-
-        <div class="volleyball">
-          <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-            <defs>
-              <radialGradient id="ballGrad" cx="40%" cy="35%" r="60%">
-                <stop offset="0%" stop-color="#f5f5f5"/>
-                <stop offset="100%" stop-color="#b8b8b8"/>
-              </radialGradient>
-            </defs>
-            <circle cx="100" cy="100" r="96" fill="url(#ballGrad)"/>
-            <path d="M100 4 Q140 40 140 100 Q140 160 100 196" fill="none" stroke="#003DA5" stroke-width="4"/>
-            <path d="M100 4 Q60 40 60 100 Q60 160 100 196" fill="none" stroke="#003DA5" stroke-width="4"/>
-            <path d="M4 100 Q40 60 100 60 Q160 60 196 100" fill="none" stroke="#003DA5" stroke-width="4"/>
-            <path d="M4 100 Q40 140 100 140 Q160 140 196 100" fill="none" stroke="#003DA5" stroke-width="4"/>
-            <circle cx="100" cy="100" r="96" fill="none" stroke="rgba(0,0,0,0.15)" stroke-width="2"/>
-          </svg>
-        </div>
-
-        <div class="hero-mini-card bottom">
-          <div class="mini-label">Next Event</div>
-          <div class="mini-value">Apr 12</div>
-          <div class="mini-copy">National Volleyball League Finals · Kigali</div>
-        </div>
-      </div>
-    </div>
-  </header>
-
-  <div class="ticker" aria-label="Latest updates">
-    <div class="ticker-track">
-      <div class="ticker-item">#RNVL Playoffs Semis Game 5 — Police 1–3 Kepler <span class="dot">●</span></div>
-      <div class="ticker-item">Rwanda Women qualify for CAVB Championship <span class="dot">●</span></div>
-      <div class="ticker-item">National Volleyball League Finals — April 12, 2026 <span class="dot">●</span></div>
-      <div class="ticker-item">Valentine Munezero named MVP of the Month <span class="dot">●</span></div>
-      <div class="ticker-item">Beach Volleyball National Team selection camp opens <span class="dot">●</span></div>
-
-      <div class="ticker-item">#RNVL Playoffs Semis Game 5 — Police 1–3 Kepler <span class="dot">●</span></div>
-      <div class="ticker-item">Rwanda Women qualify for CAVB Championship <span class="dot">●</span></div>
-      <div class="ticker-item">National Volleyball League Finals — April 12, 2026 <span class="dot">●</span></div>
-      <div class="ticker-item">Valentine Munezero named MVP of the Month <span class="dot">●</span></div>
-      <div class="ticker-item">Beach Volleyball National Team selection camp opens <span class="dot">●</span></div>
-    </div>
-  </div>
-
-  <main>
-    <section class="scores-section reveal" id="match-centre">
-      <div class="container">
-        <div class="section-head">
-          <div>
-            <div class="section-label">Live & Upcoming</div>
-            <h2 class="section-title">Match Centre</h2>
-          </div>
-          <a href="#calendar" class="ghost-link">Full Schedule</a>
-        </div>
-
-        <div class="scores-grid">
-          <article class="score-card live">
-            <div class="score-meta">
-              <span class="score-league">National League — Men</span>
-              <span class="live-badge">Live Set 3</span>
-            </div>
-            <div class="score-teams">
-              <div class="team-info">
-                <div class="team-flag">🏐</div>
-                <div class="team-name">APR Volleyball Club</div>
-              </div>
-              <div class="score-divider">
-                <div class="score-num">2 — 1</div>
-                <div class="score-vs">21 · 18 · 21</div>
-              </div>
-              <div class="team-info right">
-                <div class="team-flag">🏐</div>
-                <div class="team-name">REG Volleyball</div>
-              </div>
-            </div>
-            <div class="score-time">Amahoro Indoor Stadium · Kigali</div>
-          </article>
-
-          <article class="score-card">
-            <div class="score-meta">
-              <span class="score-league">National League — Women</span>
-              <span class="upcoming-badge">Today 18:30</span>
-            </div>
-            <div class="score-teams">
-              <div class="team-info">
-                <div class="team-flag">🏐</div>
-                <div class="team-name">IPRC Kigali</div>
-              </div>
-              <div class="score-divider">
-                <div class="score-num">vs</div>
-                <div class="score-vs">Kick-off soon</div>
-              </div>
-              <div class="team-info right">
-                <div class="team-flag">🏐</div>
-                <div class="team-name">Police Volleyball</div>
-              </div>
-            </div>
-            <div class="score-time">Petit Stade · Kigali</div>
-          </article>
-
-          <article class="score-card">
-            <div class="score-meta">
-              <span class="score-league">National League — Men</span>
-              <span class="completed-badge">Final</span>
-            </div>
-            <div class="score-teams">
-              <div class="team-info">
-                <div class="team-flag">🏐</div>
-                <div class="team-name">Rwanda Energy Group</div>
-              </div>
-              <div class="score-divider">
-                <div class="score-num">3 — 0</div>
-                <div class="score-vs">25 · 22 · 25</div>
-              </div>
-              <div class="team-info right">
-                <div class="team-flag">🏐</div>
-                <div class="team-name">Gisagara VC</div>
-              </div>
-            </div>
-            <div class="score-time">BK Arena · Kigali</div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="competitions-section reveal" id="competitions">
-      <div class="container">
-        <div class="section-head">
-          <div>
-            <div class="section-label">Domestic & International</div>
-            <h2 class="section-title">Competitions</h2>
-          </div>
-          <p class="section-subtitle">
-            Follow major tournaments, league action, and federation events across indoor and beach volleyball.
-          </p>
-        </div>
-
-        <div class="competitions-grid">
-          <article class="competition-card">
-            <span class="competition-tag">Featured Tournament</span>
-            <h3>Africa Men’s Club Championship 2026</h3>
-            <p>
-              Kigali prepares to host one of the biggest club volleyball events on the continent, bringing elite competition and regional visibility to Rwanda.
-            </p>
-            <div class="competition-meta">
-              <span>Kigali</span>
-              <span>International</span>
-              <span>Men’s Clubs</span>
-            </div>
-          </article>
-
-          <article class="competition-card">
-            <span class="competition-tag">National League</span>
-            <h3>Rwanda National Volleyball League</h3>
-            <p>
-              The country’s top domestic competition featuring the strongest men’s and women’s clubs competing through regular season and playoffs.
-            </p>
-            <div class="competition-meta">
-              <span>Men & Women</span>
-              <span>Season Ongoing</span>
-              <span>League Format</span>
-            </div>
-          </article>
-
-          <article class="competition-card">
-            <span class="competition-tag">Development Pathway</span>
-            <h3>Youth & Beach Volleyball Circuit</h3>
-            <p>
-              A growing platform for identifying future national talent, strengthening grassroots development, and increasing nationwide participation.
-            </p>
-            <div class="competition-meta">
-              <span>Youth Focus</span>
-              <span>Beach Volleyball</span>
-              <span>Talent Growth</span>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="news-section reveal" id="news">
-      <div class="container">
-        <div class="section-head">
-          <div>
-            <div class="section-label">Latest Updates</div>
-            <h2 class="section-title">News & Stories</h2>
-          </div>
-          <a href="#about" class="ghost-link">Media Centre</a>
-        </div>
-
-        <div class="news-grid">
-          <article class="news-featured">
-            <div class="news-img-bg">🏆</div>
-            <div class="news-content">
-              <span class="news-cat">Featured</span>
-              <h3>Rwanda ready to welcome continental club volleyball to Kigali</h3>
-              <p>
-                Federation preparations continue as Rwanda builds momentum to host a flagship African volleyball event, with focus on fan experience, venue readiness, and regional participation.
-              </p>
-              <div class="news-date">March 2026</div>
-            </div>
-          </article>
-
-          <div class="news-list">
-            <article class="news-item">
-              <div class="news-item-cat">National Teams</div>
-              <h4>Women’s national side secures qualification and shifts focus to final camp preparation</h4>
-              <div class="news-item-date">March 2026</div>
-            </article>
-
-            <article class="news-item">
-              <div class="news-item-cat">League</div>
-              <h4>Playoff intensity rises as title contenders separate themselves in decisive fixtures</h4>
-              <div class="news-item-date">March 2026</div>
-            </article>
-
-            <article class="news-item">
-              <div class="news-item-cat">Player Spotlight</div>
-              <h4>Valentine Munezero earns monthly honors after standout performances</h4>
-              <div class="news-item-date">March 2026</div>
-            </article>
-
-            <article class="news-item">
-              <div class="news-item-cat">Development</div>
-              <h4>Beach volleyball selection camp opens with focus on youth pipeline and national depth</h4>
-              <div class="news-item-date">March 2026</div>
-            </article>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="teams-section reveal" id="teams">
-      <div class="container">
-        <div class="section-head">
-          <div>
-            <div class="section-label">Programs & Squads</div>
-            <h2 class="section-title">National Teams</h2>
-          </div>
-          <p class="section-subtitle">
-            A structured national program spanning senior, youth, and beach volleyball categories.
-          </p>
-        </div>
-
-        <div class="teams-tabs">
-          <button class="tab-btn active" data-filter="all">All Teams</button>
-          <button class="tab-btn" data-filter="senior">Senior</button>
-          <button class="tab-btn" data-filter="youth">Youth</button>
-          <button class="tab-btn" data-filter="beach">Beach</button>
-        </div>
-
-        <div class="teams-grid" id="teamsGrid">
-          <article class="team-card" data-category="senior">
-            <span class="team-emoji">🇷🇼</span>
-            <h3>Senior Men</h3>
-            <p>Elite national squad competing at continental and regional level.</p>
-            <div class="team-record">14–6</div>
-            <div class="team-record-label">Recent Record</div>
-          </article>
-
-          <article class="team-card" data-category="senior">
-            <span class="team-emoji">🇷🇼</span>
-            <h3>Senior Women</h3>
-            <p>National women’s team building consistency and continental presence.</p>
-            <div class="team-record">12–5</div>
-            <div class="team-record-label">Recent Record</div>
-          </article>
-
-          <article class="team-card" data-category="youth">
-            <span class="team-emoji">🌟</span>
-            <h3>U21 Men</h3>
-            <p>Emerging talent pipeline with focus on transition to senior competition.</p>
-            <div class="team-record">9–4</div>
-            <div class="team-record-label">Development Cycle</div>
-          </article>
-
-          <article class="team-card" data-category="youth">
-            <span class="team-emoji">🌟</span>
-            <h3>U21 Women</h3>
-            <p>High-potential team preparing the next generation of national players.</p>
-            <div class="team-record">10–3</div>
-            <div class="team-record-label">Development Cycle</div>
-          </article>
-
-          <article class="team-card" data-category="youth">
-            <span class="team-emoji">🚀</span>
-            <h3>U19 Men</h3>
-            <p>Early-stage national prospects identified through domestic scouting.</p>
-            <div class="team-record">Talent Pool</div>
-            <div class="team-record-label">Youth Program</div>
-          </article>
-
-          <article class="team-card" data-category="youth">
-            <span class="team-emoji">🚀</span>
-            <h3>U19 Women</h3>
-            <p>Structured youth pathway feeding long-term high-performance plans.</p>
-            <div class="team-record">Talent Pool</div>
-            <div class="team-record-label">Youth Program</div>
-          </article>
-
-          <article class="team-card" data-category="beach">
-            <span class="team-emoji">🏖️</span>
-            <h3>Beach Men</h3>
-            <p>Dedicated pairs program expanding Rwanda’s presence in beach volleyball.</p>
-            <div class="team-record">6 Events</div>
-            <div class="team-record-label">Circuit Focus</div>
-          </article>
-
-          <article class="team-card" data-category="beach">
-            <span class="team-emoji">☀️</span>
-            <h3>Beach Women</h3>
-            <p>Competitive beach unit with emphasis on rankings, selection, and exposure.</p>
-            <div class="team-record">4 Pairs</div>
-            <div class="team-record-label">Active Squad</div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="calendar-section reveal" id="calendar">
-      <div class="container">
-        <div class="section-head">
-          <div>
-            <div class="section-label">Dates to Watch</div>
-            <h2 class="section-title">Calendar</h2>
-          </div>
-          <p class="section-subtitle">
-            Upcoming fixtures, events, federation activities, and competition milestones.
-          </p>
-        </div>
-
-        <div class="calendar-grid">
-          <article class="calendar-card">
-            <span class="calendar-date">Apr 12, 2026</span>
-            <h3>National Volleyball League Finals</h3>
-            <p>Championship finals expected to bring the strongest domestic clubs together in Kigali.</p>
-            <div class="calendar-meta">
-              <span>📍 Kigali</span>
-              <span>🕒 Full-day event</span>
-            </div>
-          </article>
-
-          <article class="calendar-card">
-            <span class="calendar-date">Apr 18, 2026</span>
-            <h3>Beach Volleyball Selection Camp</h3>
-            <p>Open selection and evaluation session for athletes targeting national beach competition opportunities.</p>
-            <div class="calendar-meta">
-              <span>📍 Training Venue TBA</span>
-              <span>🕒 Morning Session</span>
-            </div>
-          </article>
-
-          <article class="calendar-card">
-            <span class="calendar-date">May 2026</span>
-            <h3>Africa Men’s Club Championship</h3>
-            <p>International competition hosted in Kigali, showcasing top club teams across the continent.</p>
-            <div class="calendar-meta">
-              <span>📍 Kigali</span>
-              <span>🎟️ Ticketing to open soon</span>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="about-section reveal" id="about">
-      <div class="container">
-        <div class="section-head">
-          <div>
-            <div class="section-label">Federation Overview</div>
-            <h2 class="section-title">About FRVB</h2>
-          </div>
-          <p class="section-subtitle">
-            The Rwanda Volleyball Federation supports competition, athlete development, national representation, and the growth of volleyball across the country.
-          </p>
-        </div>
-
-        <div class="competitions-grid">
-          <article class="competition-card">
-            <span class="competition-tag">Mission</span>
-            <h3>Grow the game nationally</h3>
-            <p>
-              Promote inclusive participation, strengthen the competition ecosystem, and create pathways from grassroots to elite performance.
-            </p>
-            <div class="competition-meta">
-              <span>Development</span>
-              <span>Access</span>
-            </div>
-          </article>
-
-          <article class="competition-card">
-            <span class="competition-tag">Performance</span>
-            <h3>Build stronger national teams</h3>
-            <p>
-              Support scouting, training, competition exposure, and long-term player progression across age groups and disciplines.
-            </p>
-            <div class="competition-meta">
-              <span>Elite Pathways</span>
-              <span>Preparation</span>
-            </div>
-          </article>
-
-          <article class="competition-card">
-            <span class="competition-tag">Visibility</span>
-            <h3>Modernize volleyball communication</h3>
-            <p>
-              Deliver a digital-first federation presence with better storytelling, live updates, competition coverage, and fan engagement.
-            </p>
-            <div class="competition-meta">
-              <span>Media</span>
-              <span>Fan Experience</span>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    <div class="container">
-      <div class="footer-top">
-        <div class="footer-brand">
-          <div class="nav-logo">
-            <div class="logo-badge">FRVB</div>
-            <div>
-              <div class="logo-text">FRVB</div>
-              <div class="logo-sub">Rwanda Volleyball</div>
-            </div>
-          </div>
-          <p>
-            A modern digital home for Rwandan volleyball — designed to showcase competitions,
-            national teams, federation updates, and fan engagement in one place.
-          </p>
-          <div class="social-links">
-            <a href="#" class="social-link" aria-label="Facebook">f</a>
-            <a href="#" class="social-link" aria-label="Instagram">◎</a>
-            <a href="#" class="social-link" aria-label="X / Twitter">𝕏</a>
-            <a href="#" class="social-link" aria-label="YouTube">▶</a>
-          </div>
-        </div>
-
-        <div class="footer-col">
-          <h4>Explore</h4>
-          <ul>
-            <li><a href="#teams">Teams</a></li>
-            <li><a href="#competitions">Competitions</a></li>
-            <li><a href="#news">News</a></li>
-            <li><a href="#calendar">Calendar</a></li>
-          </ul>
-        </div>
-
-        <div class="footer-col">
-          <h4>Federation</h4>
-          <ul>
-            <li><a href="#about">About FRVB</a></li>
-            <li><a href="#">Governance</a></li>
-            <li><a href="#">Clubs</a></li>
-            <li><a href="#">Media Centre</a></li>
-          </ul>
-        </div>
-
-        <div class="footer-col">
-          <h4>Contact</h4>
-          <ul>
-            <li><a href="#">Kigali, Rwanda</a></li>
-            <li><a href="#">info@frvb.rw</a></li>
-            <li><a href="#">+250 XXX XXX XXX</a></li>
-            <li><a href="#">Office Hours</a></li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="footer-bottom">
-        <p>© 2026 Rwanda Volleyball Federation. Demo redesign concept.</p>
-        <p>Designed for presentation and further development.</p>
-      </div>
-    </div>
-  </footer>
-
-  <script>
-    const hamburger = document.getElementById("hamburger");
-    const mobileNav = document.getElementById("mobileNav");
-    const mobileLinks = mobileNav.querySelectorAll("a");
-
-    hamburger.addEventListener("click", () => {
-      const isOpen = mobileNav.classList.toggle("open");
-      hamburger.classList.toggle("open", isOpen);
-      hamburger.setAttribute("aria-expanded", isOpen ? "true" : "false");
-      document.body.classList.toggle("menu-open", isOpen);
-    });
-
-    mobileLinks.forEach(link => {
-      link.addEventListener("click", () => {
-        mobileNav.classList.remove("open");
-        hamburger.classList.remove("open");
-        hamburger.setAttribute("aria-expanded", "false");
-        document.body.classList.remove("menu-open");
-      });
-    });
-
-    const revealItems = document.querySelectorAll(".reveal");
-    const revealObserver = new IntersectionObserver(
-      entries => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("visible");
-          }
-        });
-      },
-      { threshold: 0.15 }
-    );
-
-    revealItems.forEach(item => revealObserver.observe(item));
-
-    const navLinks = document.querySelectorAll(".nav-links a");
-    const sections = [...document.querySelectorAll("main section, header.hero")];
-
-    function setActiveLink() {
-      const scrollY = window.scrollY + 140;
-      let currentId = "top";
-
-      sections.forEach(section => {
-        if (scrollY >= section.offsetTop) {
-          currentId = section.id;
-        }
-      });
-
-      navLinks.forEach(link => {
-        const href = link.getAttribute("href").replace("#", "");
-        link.classList.toggle("active", href === currentId);
-      });
-    }
-
-    window.addEventListener("scroll", setActiveLink);
-    window.addEventListener("load", setActiveLink);
-
-    const tabButtons = document.querySelectorAll(".tab-btn");
-    const teamCards = document.querySelectorAll(".team-card");
-
-    tabButtons.forEach(button => {
-      button.addEventListener("click", () => {
-        const filter = button.dataset.filter;
-
-        tabButtons.forEach(btn => btn.classList.remove("active"));
-        button.classList.add("active");
-
-        teamCards.forEach(card => {
-          const category = card.dataset.category;
-          const show = filter === "all" || category === filter;
-          card.style.display = show ? "block" : "none";
-        });
-      });
-    });
-  </script>
-</body>
-</html>
-Best next improvements after this:
-
-replace all placeholder content with real FRVB content
-
-add real images instead of emoji/icon placeholders
-
-split this into index.html, style.css, and script.js
-
-create subpages for news, teams, fixtures, and about
-
-connect it to a CMS or simple admin workflow later
-
-Send me the next step you want, and I’ll keep building it with you.
-
-
-How can I preview this using github as storage for the code
-
-
-Thought for 6s
-Use GitHub Pages. It is the easiest way to preview a static HTML/CSS/JS site directly from a GitHub repository. GitHub Pages hosts static files from your repo and looks for an entry file like index.html. 
-
-Here’s the simplest way:
-
-Create a new GitHub repository.
-
-Upload your website files into it.
-
-Make sure your main page is named index.html and sits at the top level of the repo, unless you deliberately publish from a /docs folder. GitHub Pages expects an entry file such as index.html. 
-
-In the repo, open Settings → Pages.
-
-Under Build and deployment, choose Deploy from a branch.
-
-Select your branch, usually main, and choose / (root) if your index.html is in the repo root.
-
-Save.
-
-GitHub will publish the site and give you a live link under Pages → Visit site. GitHub says publishing can take up to about 10 minutes after you push changes. 
-
-Your preview URL will usually look like:
-
-https://yourusername.github.io/repository-name/
-For a special user site repo named exactly yourusername.github.io, the URL becomes:
-
-https://yourusername.github.io/
-GitHub’s quickstart documents both patterns. 
-
-For your current FRVB homepage, the easiest setup is:
-
-create a repo, maybe frvb-website
-
-put the full code in a file called index.html
-
-go to Settings > Pages
-
-publish from main branch, root folder
-
-Then every time you edit and push the file, the live preview updates after GitHub rebuilds it. 
-
-A couple of practical tips:
-
-If you later split your code into index.html, style.css, and script.js, GitHub Pages will still work fine because it serves static files directly from the repo. 
-
-If you ever use a generator or custom build process, GitHub also supports publishing with GitHub Actions instead of directly from a branch. 
-
-If you want, I can give you the exact folder structure and step-by-step upload flow for your FRVB code so you can get it live in one go.
-
-
-Alright I see how it looks like, first off can you tell me how I can manually make the ball on the website an actuall volleyball?
-
-Yes — the easiest manual way is to replace the current simple ball SVG with a more realistic volleyball SVG.
-
-Right now your ball is basically:
-
-one circle
-
-a gray gradient
-
-a few blue curved lines
-
-That gives “ball icon” more than “real volleyball.”
-
-To make it look like an actual volleyball, you have 3 main options:
-
-Option 1: Improve the existing inline SVG
-This is the best option if you want it to stay sharp, scalable, and easy to style.
-
-What to change:
-
-use a warmer white/light cream base instead of plain gray
-
-add stronger panel curves
-
-add more seams, not just 4 lines
-
-add highlight and shadow
-
-add a subtle outer shadow so it feels 3D
-
-In your code, find this part:
-
-<div class="volleyball">
-  <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-    ...
-  </svg>
-</div>
-Then replace it with something more realistic like this:
-
-<div class="volleyball">
-  <svg viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-    <defs>
-      <radialGradient id="ballBase" cx="35%" cy="30%" r="65%">
-        <stop offset="0%" stop-color="#ffffff"/>
-        <stop offset="55%" stop-color="#f3f3f0"/>
-        <stop offset="100%" stop-color="#cfcfc9"/>
-      </radialGradient>
-
-      <radialGradient id="ballShade" cx="70%" cy="75%" r="60%">
-        <stop offset="0%" stop-color="rgba(0,0,0,0)"/>
-        <stop offset="100%" stop-color="rgba(0,0,0,0.18)"/>
-      </radialGradient>
-
-      <filter id="ballShadow" x="-30%" y="-30%" width="160%" height="160%">
-        <feDropShadow dx="0" dy="18" stdDeviation="12" flood-color="rgba(0,0,0,0.35)"/>
-      </filter>
-    </defs>
-
-    <g filter="url(#ballShadow)">
-      <circle cx="150" cy="150" r="138" fill="url(#ballBase)"/>
-
-      <!-- blue panels -->
-      <path d="M150 15 C195 45 220 95 220 150 C220 205 195 255 150 285"
-            fill="none" stroke="#003DA5" stroke-width="10" stroke-linecap="round"/>
-      <path d="M150 15 C105 45 80 95 80 150 C80 205 105 255 150 285"
-            fill="none" stroke="#003DA5" stroke-width="10" stroke-linecap="round"/>
-      <path d="M15 150 C45 108 95 88 150 88 C205 88 255 108 285 150"
-            fill="none" stroke="#003DA5" stroke-width="10" stroke-linecap="round"/>
-      <path d="M15 150 C45 192 95 212 150 212 C205 212 255 192 285 150"
-            fill="none" stroke="#003DA5" stroke-width="10" stroke-linecap="round"/>
-
-      <!-- extra panel seams -->
-      <path d="M55 55 C95 78 120 112 128 150"
-            fill="none" stroke="#1b4fb8" stroke-width="6" stroke-linecap="round" opacity="0.9"/>
-      <path d="M245 55 C205 78 180 112 172 150"
-            fill="none" stroke="#1b4fb8" stroke-width="6" stroke-linecap="round" opacity="0.9"/>
-      <path d="M55 245 C95 222 120 188 128 150"
-            fill="none" stroke="#1b4fb8" stroke-width="6" stroke-linecap="round" opacity="0.9"/>
-      <path d="M245 245 C205 222 180 188 172 150"
-            fill="none" stroke="#1b4fb8" stroke-width="6" stroke-linecap="round" opacity="0.9"/>
-
-      <!-- highlight -->
-      <ellipse cx="105" cy="92" rx="42" ry="22" fill="rgba(255,255,255,0.45)" transform="rotate(-20 105 92)"/>
-
-      <!-- rim -->
-      <circle cx="150" cy="150" r="138" fill="none" stroke="rgba(0,0,0,0.12)" stroke-width="4"/>
-    </g>
-  </svg>
-</div>
-That alone will make it feel much more like a real volleyball.
-
-Option 2: Use a transparent PNG or WebP of a volleyball
-This is easiest if you want realism fast.
-
-Replace the SVG with:
-
-<div class="volleyball">
-  <img src="volleyball.png" alt="Volleyball">
-</div>
-Then style it:
-
-.volleyball img {
-  width: 100%;
-  height: auto;
-  display: block;
-  filter: drop-shadow(0 20px 30px rgba(0,0,0,0.35));
-}
-This is good if:
-
-you already have a nice volleyball image
-
-you want photorealism quickly
-
-But it is less flexible than SVG.
-
-Option 3: Use an SVG file made in Figma or Illustrator
-This is the cleanest “designer” method.
-
-Process:
-
-draw or import a realistic volleyball in Figma/Illustrator
-
-export as SVG
-
-paste the SVG code into your HTML
-
-That gives you:
-
-clean scalable graphics
-
-easier color editing
-
-no blurry image issues
-
-What specifically makes a volleyball look real
-If you are editing it manually, focus on these details:
-
-1. Panel shape
-A volleyball should have curved stitched-looking panels, not just random arcs.
-
-2. Base color
-Use slightly off-white shades:
-
-#ffffff
-
-#f3f3f0
-
-#d0d0c8
-
-3. Contrast
-Your blue seams should vary a little:
-
-darker main blue
-
-slightly lighter secondary seam color
-
-4. Lighting
-A small highlight on the top-left and a shadow on the lower-right makes a huge difference.
-
-5. Shadow under the object
-Even if the ball itself is good, without shadow it still looks flat.
-
-Small CSS improvement for your current ball
-Even before changing the SVG, improve the container like this:
-
-.volleyball {
-  width: 340px;
-  height: 340px;
-  animation: floatBall 5s ease-in-out infinite;
-  filter: drop-shadow(0 25px 40px rgba(0,0,0,0.35));
-}
-That helps the ball feel more premium.
-
-My recommendation
-For your site, I’d do this:
-
-keep it as inline SVG
-
-replace the current simple drawing with a more realistic volleyball SVG
-
-keep the floating animation
-
-add stronger shadow and highlight
-
-That gives the best balance of:
-
-realism
-
-performance
-
-easy editing
-
-good appearance on all screen sizes
-
-I can also make you a better volleyball graphic already fitted into your exact homepage code so you can paste it directly.
-
-
-Let's go with option 1 , i can't find the code for the volleyball
-
-Got you — I know exactly why you can’t find it 👍
-
-Your file is long, and the volleyball is a buried inline SVG inside the HERO section.
-
-🔍 Where it is in your code
-Search (Ctrl + F) for this line:
-
-<div class="volleyball">
-Inside it, you’ll see something like this (your current ball):
-
-<div class="volleyball">
-  <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-    <defs>
-      <radialGradient id="ballGrad" cx="40%" cy="35%" r="60%">
-        <stop offset="0%" stop-color="#e8e8e8"/>
-        <stop offset="100%" stop-color="#b0b0b0"/>
-      </radialGradient>
-    </defs>
-    <circle cx="100" cy="100" r="96" fill="url(#ballGrad)"/>
-    <path d="M100 4 Q140 40 140 100 Q140 160 100 196" fill="none" stroke="#003DA5" stroke-width="4"/>
-    <path d="M100 4 Q60 40 60 100 Q60 160 100 196"  fill="none" stroke="#003DA5" stroke-width="4"/>
-    <path d="M4 100 Q40 60 100 60 Q160 60 196 100"  fill="none" stroke="#003DA5" stroke-width="4"/>
-    <path d="M4 100 Q40 140 100 140 Q160 140 196 100" fill="none" stroke="#003DA5" stroke-width="4"/>
-    <circle cx="100" cy="100" r="96" fill="none" stroke="rgba(0,0,0,0.15)" stroke-width="2"/>
-  </svg>
-</div>
-👉 That’s the one you need to replace.
-
-✅ What to do (exact steps)
-1. Select EVERYTHING inside:
-From:
-
-<div class="volleyball">
-to:
-
-</div>
-2. Replace it with this upgraded realistic volleyball:
-<div class="volleyball">
-  <svg viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-    <defs>
-      <radialGradient id="ballBase" cx="35%" cy="30%" r="65%">
-        <stop offset="0%" stop-color="#ffffff"/>
-        <stop offset="55%" stop-color="#f3f3f0"/>
-        <stop offset="100%" stop-color="#cfcfc9"/>
-      </radialGradient>
-
-      <radialGradient id="ballShade" cx="70%" cy="75%" r="60%">
-        <stop offset="0%" stop-color="rgba(0,0,0,0)"/>
-        <stop offset="100%" stop-color="rgba(0,0,0,0.18)"/>
-      </radialGradient>
-
-      <filter id="ballShadow" x="-30%" y="-30%" width="160%" height="160%">
-        <feDropShadow dx="0" dy="18" stdDeviation="12" flood-color="rgba(0,0,0,0.35)"/>
-      </filter>
-    </defs>
-
-    <g filter="url(#ballShadow)">
-      <circle cx="150" cy="150" r="138" fill="url(#ballBase)"/>
-
-      <!-- main panels -->
-      <path d="M150 15 C195 45 220 95 220 150 C220 205 195 255 150 285"
-            fill="none" stroke="#003DA5" stroke-width="10" stroke-linecap="round"/>
-      <path d="M150 15 C105 45 80 95 80 150 C80 205 105 255 150 285"
-            fill="none" stroke="#003DA5" stroke-width="10" stroke-linecap="round"/>
-      <path d="M15 150 C45 108 95 88 150 88 C205 88 255 108 285 150"
-            fill="none" stroke="#003DA5" stroke-width="10" stroke-linecap="round"/>
-      <path d="M15 150 C45 192 95 212 150 212 C205 212 255 192 285 150"
-            fill="none" stroke="#003DA5" stroke-width="10" stroke-linecap="round"/>
-
-      <!-- extra seams -->
-      <path d="M55 55 C95 78 120 112 128 150"
-            fill="none" stroke="#1b4fb8" stroke-width="6" opacity="0.9"/>
-      <path d="M245 55 C205 78 180 112 172 150"
-            fill="none" stroke="#1b4fb8" stroke-width="6" opacity="0.9"/>
-      <path d="M55 245 C95 222 120 188 128 150"
-            fill="none" stroke="#1b4fb8" stroke-width="6" opacity="0.9"/>
-      <path d="M245 245 C205 222 180 188 172 150"
-            fill="none" stroke="#1b4fb8" stroke-width="6" opacity="0.9"/>
-
-      <!-- highlight -->
-      <ellipse cx="105" cy="92" rx="42" ry="22"
-               fill="rgba(255,255,255,0.45)"
-               transform="rotate(-20 105 92)"/>
-
-      <!-- outer rim -->
-      <circle cx="150" cy="150" r="138"
-              fill="none"
-              stroke="rgba(0,0,0,0.12)"
-              stroke-width="4"/>
-    </g>
-  </svg>
-</div>
-🎯 After you paste it
-You should immediately notice:
-
-more realistic panels
-
-better lighting
-
-proper depth (shadow)
-
-less “flat icon” look
-
-🔥 Optional (but HIGHLY recommended)
-Add this CSS tweak to make it feel premium:
-
-.volleyball {
-  width: 340px;
-  height: 340px;
-  animation: float 5s ease-in-out infinite;
-  filter: drop-shadow(0 30px 45px rgba(0,0,0,0.4));
-}
-If you want next level
-I can:
-
-make it spin slowly like a real ball
-
-add parallax movement on mouse
-
-or make it react to scroll
-
-Just tell me 👍
-
-
-Can you do it for me and can you make it react to the scroll
-
-
-Thought for 2m 36s
-Done — I made the ball look like a proper volleyball and added scroll reaction.
-
-You can grab the updated file here:
-frvb_homepage_scroll_ball.html
-
-What changed:
-
-replaced the simple ball with a more realistic inline SVG volleyball
-
-added better shading, seams, highlight, and shadow
-
-made the ball rotate and shift slightly as you scroll
-
-kept the floating feel so it still looks alive
-
-The two key things I added were:
-
-the volleyball now has id="heroBall"
-
-the script now listens to scroll and updates its transform with rotateX, rotateZ, and slight translate movement
-
-If you want to paste only the important parts into your existing file instead of replacing the whole page, use these:
-
-Replace your current ball block with:
-
-<div class="volleyball" id="heroBall">
-  <svg viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-    <defs>
-      <radialGradient id="ballBase" cx="35%" cy="30%" r="65%">
-        <stop offset="0%" stop-color="#ffffff"/>
-        <stop offset="55%" stop-color="#f3f3f0"/>
-        <stop offset="100%" stop-color="#cfcfc9"/>
-      </radialGradient>
-      <radialGradient id="ballShadowFill" cx="72%" cy="78%" r="60%">
-        <stop offset="0%" stop-color="rgba(0,0,0,0)"/>
-        <stop offset="100%" stop-color="rgba(0,0,0,0.18)"/>
-      </radialGradient>
-      <filter id="ballShadow" x="-30%" y="-30%" width="160%" height="160%">
-        <feDropShadow dx="0" dy="18" stdDeviation="12" flood-color="rgba(0,0,0,0.35)"/>
-      </filter>
-    </defs>
-
-    <g filter="url(#ballShadow)">
-      <circle cx="150" cy="150" r="138" fill="url(#ballBase)"/>
-      <circle cx="150" cy="150" r="138" fill="url(#ballShadowFill)" opacity="0.55"/>
-
-      <path d="M150 15 C195 45 220 95 220 150 C220 205 195 255 150 285" fill="none" stroke="#003DA5" stroke-width="10" stroke-linecap="round"/>
-      <path d="M150 15 C105 45 80 95 80 150 C80 205 105 255 150 285" fill="none" stroke="#003DA5" stroke-width="10" stroke-linecap="round"/>
-      <path d="M15 150 C45 108 95 88 150 88 C205 88 255 108 285 150" fill="none" stroke="#003DA5" stroke-width="10" stroke-linecap="round"/>
-      <path d="M15 150 C45 192 95 212 150 212 C205 212 255 192 285 150" fill="none" stroke="#003DA5" stroke-width="10" stroke-linecap="round"/>
-
-      <path d="M55 55 C95 78 120 112 128 150" fill="none" stroke="#1b4fb8" stroke-width="6" stroke-linecap="round" opacity="0.9"/>
-      <path d="M245 55 C205 78 180 112 172 150" fill="none" stroke="#1b4fb8" stroke-width="6" stroke-linecap="round" opacity="0.9"/>
-      <path d="M55 245 C95 222 120 188 128 150" fill="none" stroke="#1b4fb8" stroke-width="6" stroke-linecap="round" opacity="0.9"/>
-      <path d="M245 245 C205 222 180 188 172 150" fill="none" stroke="#1b4fb8" stroke-width="6" stroke-linecap="round" opacity="0.9"/>
-
-      <ellipse cx="105" cy="92" rx="42" ry="22" fill="rgba(255,255,255,0.45)" transform="rotate(-20 105 92)"/>
-      <circle cx="150" cy="150" r="138" fill="none" stroke="rgba(0,0,0,0.12)" stroke-width="4"/>
-    </g>
-  </svg>
-</div>
-Update your .volleyball CSS to:
-
-.volleyball {
-  width: min(360px, 80vw);
-  transform-style: preserve-3d;
-  will-change: transform;
-  animation: floatBall 5s ease-in-out infinite;
-  filter: drop-shadow(0 30px 45px rgba(0,0,0,0.4));
-  z-index: 1;
-}
-
-.volleyball svg {
-  width: 100%;
-  height: auto;
-  display: block;
-}
-And add this JS near the bottom before </body>:
-
-<script>
-  const heroBall = document.getElementById("heroBall");
-  const heroVisual = document.querySelector(".hero-visual");
-
-  function updateBallByScroll() {
-    if (!heroBall || !heroVisual) return;
-
-    const rect = heroVisual.getBoundingClientRect();
-    const viewportHeight = window.innerHeight || document.documentElement.clientHeight;
-
-    const progress = Math.max(
-      -1,
-      Math.min(1, (viewportHeight * 0.5 - rect.top - rect.height * 0.5) / viewportHeight)
-    );
-
-    const rotateZ = progress * 38;
-    const rotateX = progress * -10;
-    const translateY = progress * -18;
-    const translateX = progress * 10;
-
-    heroBall.style.transform =
-      `translate3d(${translateX}px, ${translateY}px, 0) rotateX(${rotateX}deg) rotateZ(${rotateZ}deg)`;
-  }
-
-  let scrollTicking = false;
-
-  function handleScrollBall() {
-    if (!scrollTicking) {
-      window.requestAnimationFrame(() => {
-        updateBallByScroll();
-        scrollTicking = false;
-      });
-      scrollTicking = true;
-    }
-  }
-
-  window.addEventListener("scroll", handleScrollBall, { passive: true });
-  window.addEventListener("resize", updateBallByScroll);
-  window.addEventListener("load", updateBallByScroll);
-</script>
-One note: your original uploaded file looks partial and stops around the Match Centre section, so I built this on the fuller homepage version we had been working from. If you want, next I can make the ball react to both mouse movement and scroll so it feels even more premium.
-
-
-Yes do, but I want you to give me the full code for the whole website , not just the section you improved
-
-Absolutely — here’s the full updated homepage code with:
-
-the improved realistic volleyball
-
-scroll reaction
-
-mouse movement reaction
-
-the full homepage structure intact
-
-You can replace your current index.html with this whole file:
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>FRVB — Rwanda Volleyball Federation</title>
-  <meta
-    name="description"
-    content="Official Rwanda Volleyball Federation website concept featuring live scores, competitions, national teams, news, and events."
-  />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400&display=swap"
-    rel="stylesheet"
-  />
-
-  <style>
-    :root {
-      --blue: #003da5;
-      --blue-2: #0d58d7;
-      --gold: #ffd100;
-      --green: #009a44;
-      --red: #e8112d;
-      --dark: #0a0d14;
-      --darker: #060810;
-      --mid: #13182b;
-      --soft: #181f35;
-      --glass: rgba(255, 255, 255, 0.05);
-      --glass-2: rgba(255, 255, 255, 0.08);
-      --border: rgba(255, 255, 255, 0.09);
-      --text: #f0f4ff;
-      --muted: rgba(240, 244, 255, 0.64);
-      --shadow: 0 16px 40px rgba(0, 0, 0, 0.28);
-      --radius: 16px;
-      --max-width: 1240px;
-      --nav-height: 72px;
-    }
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      background: var(--dark);
-      color: var(--text);
-      font-family: "Barlow", sans-serif;
-      overflow-x: hidden;
-    }
-
-    body.menu-open {
-      overflow: hidden;
-    }
-
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    img {
-      max-width: 100%;
-      display: block;
-    }
-
-    ul {
-      list-style: none;
-    }
-
-    button {
-      font: inherit;
-    }
-
-    .container {
-      width: min(100% - 40px, var(--max-width));
-      margin-inline: auto;
-    }
-
-    .proposal-banner {
-      background: linear-gradient(90deg, var(--blue), var(--blue-2));
-      padding: 10px 20px;
-      font-size: 13px;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-    }
-
-    .proposal-inner {
-      width: min(100% - 20px, var(--max-width));
-      margin: 0 auto;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 12px;
-      flex-wrap: wrap;
-    }
-
-    .proposal-badge {
-      background: var(--gold);
-      color: var(--dark);
-      padding: 4px 12px;
-      border-radius: 999px;
-      font-size: 11px;
-      font-weight: 900;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-    }
-
-    nav {
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      height: var(--nav-height);
-      background: rgba(10, 13, 20, 0.92);
-      backdrop-filter: blur(14px);
-      border-bottom: 1px solid var(--border);
-    }
-
-    .nav-inner {
-      width: min(100% - 40px, var(--max-width));
-      height: 100%;
-      margin: 0 auto;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 20px;
-    }
-
-    .nav-logo {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      min-width: max-content;
-    }
-
-    .logo-badge {
-      width: 44px;
-      height: 44px;
-      border-radius: 10px;
-      border: 2px solid var(--gold);
-      background: linear-gradient(135deg, var(--blue), #0b4ec6);
-      display: grid;
-      place-items: center;
-      font-family: "Bebas Neue", sans-serif;
-      font-size: 16px;
-      color: var(--gold);
-      letter-spacing: 1px;
-      box-shadow: var(--shadow);
-    }
-
-    .logo-text {
-      font-family: "Bebas Neue", sans-serif;
-      font-size: 24px;
-      letter-spacing: 2px;
-      color: var(--gold);
-      line-height: 1;
-    }
-
-    .logo-sub {
-      font-size: 10px;
-      color: var(--muted);
-      letter-spacing: 1.4px;
-      text-transform: uppercase;
-      margin-top: 2px;
-    }
-
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 28px;
-    }
-
-    .nav-links a {
-      font-size: 14px;
-      font-weight: 700;
-      color: var(--muted);
-      letter-spacing: 0.3px;
-      position: relative;
-      transition: color 0.2s ease;
-    }
-
-    .nav-links a::after {
-      content: "";
-      position: absolute;
-      left: 0;
-      bottom: -9px;
-      width: 100%;
-      height: 2px;
-      background: var(--gold);
-      transform: scaleX(0);
-      transform-origin: left;
-      transition: transform 0.2s ease;
-    }
-
-    .nav-links a:hover,
-    .nav-links a.active {
-      color: var(--text);
-    }
-
-    .nav-links a.active::after,
-    .nav-links a:hover::after {
-      transform: scaleX(1);
-    }
-
-    .nav-actions {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
-
-    .nav-cta,
-    .btn-primary,
-    .btn-outline,
-    .ghost-link {
-      transition: transform 0.18s ease, opacity 0.18s ease, border-color 0.18s ease, background 0.18s ease;
-    }
-
-    .nav-cta {
-      background: var(--gold);
-      color: var(--dark);
-      padding: 11px 18px;
-      border-radius: 8px;
-      font-size: 13px;
-      font-weight: 900;
-      letter-spacing: 0.5px;
-    }
-
-    .nav-cta:hover,
-    .btn-primary:hover,
-    .btn-outline:hover,
-    .ghost-link:hover {
-      transform: translateY(-2px);
-    }
-
-    .hamburger {
-      display: none;
-      width: 42px;
-      height: 42px;
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      background: transparent;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-      flex-direction: column;
-      gap: 5px;
-    }
-
-    .hamburger span {
-      width: 20px;
-      height: 2px;
-      border-radius: 2px;
-      background: var(--text);
-      transition: 0.25s ease;
-    }
-
-    .hamburger.open span:nth-child(1) {
-      transform: translateY(7px) rotate(45deg);
-    }
-
-    .hamburger.open span:nth-child(2) {
-      opacity: 0;
-    }
-
-    .hamburger.open span:nth-child(3) {
-      transform: translateY(-7px) rotate(-45deg);
-    }
-
-    .mobile-nav {
-      position: fixed;
-      top: calc(44px + var(--nav-height));
-      left: 0;
-      right: 0;
-      background: rgba(10, 13, 20, 0.98);
-      backdrop-filter: blur(18px);
-      border-bottom: 1px solid var(--border);
-      padding: 18px 20px 26px;
-      display: none;
-      flex-direction: column;
-      gap: 2px;
-      z-index: 999;
-    }
-
-    .mobile-nav.open {
-      display: flex;
-    }
-
-    .mobile-nav a {
-      padding: 14px 2px;
-      font-size: 17px;
-      font-weight: 700;
-      color: var(--text);
-      border-bottom: 1px solid var(--border);
-    }
-
-    .mobile-nav .mobile-cta {
-      margin-top: 12px;
-      background: var(--gold);
-      color: var(--dark);
-      border-radius: 8px;
-      padding: 14px;
-      text-align: center;
-      font-weight: 900;
-      border-bottom: none;
-    }
-
-    .hero {
-      position: relative;
-      overflow: hidden;
-      min-height: calc(100vh - 44px - var(--nav-height));
-      display: flex;
-      align-items: center;
-      padding: 48px 0 72px;
-      background:
-        radial-gradient(ellipse at 75% 30%, rgba(0, 61, 165, 0.32), transparent 45%),
-        radial-gradient(ellipse at 20% 90%, rgba(0, 154, 68, 0.18), transparent 40%),
-        linear-gradient(to bottom, var(--darker) 0%, #0d1424 100%);
-    }
-
-    .hero-grid {
-      width: min(100% - 40px, var(--max-width));
-      margin: 0 auto;
-      display: grid;
-      grid-template-columns: 1.2fr 0.8fr;
-      align-items: center;
-      gap: 32px;
-      position: relative;
-      z-index: 1;
-    }
-
-    .hero-net {
-      position: absolute;
-      inset: 0;
-      pointer-events: none;
-      opacity: 0.07;
-    }
-
-    .hero-net svg {
-      width: 100%;
-      height: 100%;
-    }
-
-    .hero-copy {
-      max-width: 680px;
-      position: relative;
-      z-index: 2;
-    }
-
-    .hero-label {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      border: 1px solid rgba(232, 17, 45, 0.28);
-      background: rgba(232, 17, 45, 0.12);
-      color: #ff8290;
-      padding: 7px 14px;
-      border-radius: 999px;
-      font-size: 12px;
-      font-weight: 700;
-      margin-bottom: 18px;
-      animation: fadeUp 0.55s ease both;
-    }
-
-    .live-dot {
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      background: var(--red);
-      animation: pulse 1.5s infinite;
-    }
-
-    .hero h1 {
-      font-family: "Bebas Neue", sans-serif;
-      font-size: clamp(56px, 9vw, 106px);
-      line-height: 0.9;
-      letter-spacing: 2px;
-      margin-bottom: 18px;
-      animation: fadeUp 0.55s 0.08s ease both;
-    }
-
-    .hero h1 span {
-      color: var(--gold);
-      display: block;
-    }
-
-    .hero-desc {
-      font-size: 17px;
-      line-height: 1.7;
-      color: var(--muted);
-      max-width: 620px;
-      margin-bottom: 28px;
-      animation: fadeUp 0.55s 0.16s ease both;
-    }
-
-    .hero-btns {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 14px;
-      margin-bottom: 30px;
-      animation: fadeUp 0.55s 0.24s ease both;
-    }
-
-    .btn-primary {
-      background: linear-gradient(135deg, var(--blue), var(--blue-2));
-      color: var(--text);
-      padding: 15px 24px;
-      border-radius: 10px;
-      font-size: 14px;
-      font-weight: 800;
-      box-shadow: var(--shadow);
-    }
-
-    .btn-outline {
-      border: 1px solid var(--glass-2);
-      color: var(--text);
-      padding: 15px 24px;
-      border-radius: 10px;
-      font-size: 14px;
-      font-weight: 800;
-      background: rgba(255, 255, 255, 0.02);
-    }
-
-    .btn-outline:hover {
-      border-color: var(--gold);
-    }
-
-    .hero-stats {
-      display: flex;
-      gap: 18px;
-      flex-wrap: wrap;
-      animation: fadeUp 0.55s 0.32s ease both;
-    }
-
-    .stat-item {
-      min-width: 140px;
-      padding: 16px 18px;
-      border-radius: 14px;
-      border: 1px solid var(--border);
-      background: rgba(255, 255, 255, 0.04);
-    }
-
-    .stat-num {
-      font-family: "Bebas Neue", sans-serif;
-      font-size: 42px;
-      line-height: 1;
-      color: var(--gold);
-    }
-
-    .stat-label {
-      font-size: 11px;
-      color: var(--muted);
-      text-transform: uppercase;
-      letter-spacing: 1.2px;
-      margin-top: 4px;
-    }
-
-    .hero-visual {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      position: relative;
-      min-height: 420px;
-      perspective: 1200px;
-    }
-
-    .visual-ring {
-      position: absolute;
-      width: 430px;
-      height: 430px;
-      border-radius: 50%;
-      background:
-        radial-gradient(circle at 30% 30%, rgba(255,255,255,0.16), transparent 28%),
-        radial-gradient(circle at 50% 50%, rgba(255, 209, 0, 0.13), transparent 55%);
+        radial-gradient(circle at 50% 50%, rgba(255,209,0,0.13), transparent 55%);
       border: 1px solid rgba(255,255,255,0.06);
       filter: blur(1px);
     }
@@ -2923,789 +225,202 @@ You can replace your current index.html with this whole file:
       transform-style: preserve-3d;
       will-change: transform;
       animation: floatBall 5s ease-in-out infinite;
-      filter: drop-shadow(0 30px 45px rgba(0,0,0,0.4));
       z-index: 1;
+      cursor: none;
     }
+    .volleyball svg { width: 100%; height: auto; display: block; }
 
-    .volleyball svg {
-      width: 100%;
-      height: auto;
-      display: block;
+    /* custom cursor dot that follows mouse over the ball area */
+    .ball-cursor {
+      position: absolute;
+      width: 12px; height: 12px;
+      border-radius: 50%;
+      background: var(--gold);
+      pointer-events: none;
+      opacity: 0;
+      z-index: 10;
+      transform: translate(-50%, -50%);
+      transition: opacity 0.2s ease, transform 0.05s ease;
+      mix-blend-mode: difference;
     }
+    .hero-visual:hover .ball-cursor { opacity: 1; }
 
     .hero-mini-card {
       position: absolute;
       border: 1px solid var(--border);
-      background: rgba(9, 12, 20, 0.82);
+      background: rgba(9,12,20,0.82);
       backdrop-filter: blur(12px);
-      border-radius: 14px;
-      padding: 14px 16px;
-      box-shadow: var(--shadow);
-      min-width: 160px;
+      border-radius: 14px; padding: 14px 16px;
+      box-shadow: var(--shadow); min-width: 160px;
     }
+    .hero-mini-card.top { top: 30px; left: 10px; }
+    .hero-mini-card.bottom { right: 0; bottom: 24px; }
+    .mini-label { font-size: 11px; text-transform: uppercase; letter-spacing: 1px; color: var(--muted); margin-bottom: 6px; }
+    .mini-value { font-size: 22px; font-weight: 900; color: var(--gold); line-height: 1; margin-bottom: 4px; }
+    .mini-copy { font-size: 12px; color: var(--muted); line-height: 1.45; }
 
-    .hero-mini-card.top {
-      top: 30px;
-      left: 10px;
-    }
-
-    .hero-mini-card.bottom {
-      right: 0;
-      bottom: 24px;
-    }
-
-    .mini-label {
-      font-size: 11px;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      color: var(--muted);
-      margin-bottom: 6px;
-    }
-
-    .mini-value {
-      font-size: 22px;
-      font-weight: 900;
-      color: var(--gold);
-      line-height: 1;
-      margin-bottom: 4px;
-    }
-
-    .mini-copy {
-      font-size: 12px;
-      color: var(--muted);
-      line-height: 1.45;
-    }
-
+    /* ── TICKER ── */
     .ticker {
-      background: var(--gold);
-      color: var(--dark);
-      overflow: hidden;
-      white-space: nowrap;
-      height: 42px;
-      display: flex;
-      align-items: center;
+      background: var(--gold); color: var(--dark);
+      overflow: hidden; white-space: nowrap; height: 42px;
+      display: flex; align-items: center;
       border-top: 1px solid rgba(0,0,0,0.08);
       border-bottom: 1px solid rgba(0,0,0,0.08);
     }
+    .ticker-track { display: inline-flex; min-width: max-content; animation: tickerScroll 32s linear infinite; }
+    .ticker-item { font-size: 13px; font-weight: 800; padding: 0 28px; }
+    .ticker-item .dot { margin-left: 28px; color: var(--blue); }
 
-    .ticker-track {
-      display: inline-flex;
-      min-width: max-content;
-      animation: tickerScroll 32s linear infinite;
-    }
+    /* ── SECTIONS ── */
+    main section { padding: 84px 0; }
+    .section-head { display: flex; justify-content: space-between; align-items: end; gap: 20px; margin-bottom: 34px; flex-wrap: wrap; }
+    .section-label { font-size: 12px; font-weight: 800; color: var(--gold); text-transform: uppercase; letter-spacing: 3px; margin-bottom: 8px; }
+    .section-title { font-family: "Bebas Neue", sans-serif; font-size: clamp(38px, 5vw, 56px); line-height: 0.95; letter-spacing: 1px; }
+    .section-subtitle { max-width: 560px; color: var(--muted); line-height: 1.7; font-size: 15px; }
+    .ghost-link { color: var(--text); border: 1px solid var(--border); border-radius: 999px; padding: 10px 16px; font-size: 13px; font-weight: 800; white-space: nowrap; }
 
-    .ticker-item {
-      font-size: 13px;
-      font-weight: 800;
-      padding: 0 28px;
-    }
+    .scores-section, .teams-section, .calendar-section { background: var(--mid); }
+    .scores-grid, .competitions-grid, .news-grid, .teams-grid, .calendar-grid, .footer-top { display: grid; gap: 18px; }
+    .scores-grid { grid-template-columns: repeat(3, 1fr); }
 
-    .ticker-item .dot {
-      margin-left: 28px;
-      color: var(--blue);
-    }
-
-    main section {
-      padding: 84px 0;
-    }
-
-    .section-head {
-      display: flex;
-      justify-content: space-between;
-      align-items: end;
-      gap: 20px;
-      margin-bottom: 34px;
-      flex-wrap: wrap;
-    }
-
-    .section-label {
-      font-size: 12px;
-      font-weight: 800;
-      color: var(--gold);
-      text-transform: uppercase;
-      letter-spacing: 3px;
-      margin-bottom: 8px;
-    }
-
-    .section-title {
-      font-family: "Bebas Neue", sans-serif;
-      font-size: clamp(38px, 5vw, 56px);
-      line-height: 0.95;
-      letter-spacing: 1px;
-    }
-
-    .section-subtitle {
-      max-width: 560px;
-      color: var(--muted);
-      line-height: 1.7;
-      font-size: 15px;
-    }
-
-    .ghost-link {
-      color: var(--text);
-      border: 1px solid var(--border);
-      border-radius: 999px;
-      padding: 10px 16px;
-      font-size: 13px;
-      font-weight: 800;
-      white-space: nowrap;
-    }
-
-    .scores-section,
-    .teams-section,
-    .calendar-section {
-      background: var(--mid);
-    }
-
-    .scores-grid,
-    .competitions-grid,
-    .news-grid,
-    .teams-grid,
-    .calendar-grid,
-    .footer-top {
-      display: grid;
-      gap: 18px;
-    }
-
-    .scores-grid {
-      grid-template-columns: repeat(3, 1fr);
-    }
-
-    .score-card,
-    .competition-card,
-    .news-featured,
-    .news-item,
-    .team-card,
-    .calendar-card {
-      background: var(--glass);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
+    /* cards */
+    .score-card, .competition-card, .news-featured, .news-item, .team-card, .calendar-card {
+      background: var(--glass); border: 1px solid var(--border); border-radius: var(--radius);
       transition: transform 0.22s ease, border-color 0.22s ease, background 0.22s ease;
     }
-
-    .score-card:hover,
-    .competition-card:hover,
-    .news-featured:hover,
-    .news-item:hover,
-    .team-card:hover,
-    .calendar-card:hover {
-      transform: translateY(-4px);
-      border-color: rgba(255, 209, 0, 0.24);
-    }
-
-    .score-card {
-      padding: 24px;
-    }
-
-    .score-card.live {
-      border-color: rgba(232, 17, 45, 0.45);
-    }
-
-    .score-meta {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 12px;
-      flex-wrap: wrap;
-      margin-bottom: 20px;
-    }
-
-    .score-league {
-      font-size: 11px;
-      color: var(--muted);
-      text-transform: uppercase;
-      letter-spacing: 1.2px;
-    }
-
-    .live-badge,
-    .upcoming-badge,
-    .completed-badge {
-      font-size: 10px;
-      font-weight: 900;
-      letter-spacing: 1px;
-      padding: 4px 10px;
-      border-radius: 999px;
-      text-transform: uppercase;
-    }
-
-    .live-badge {
-      background: var(--red);
-      color: #fff;
-    }
-
-    .upcoming-badge {
-      background: var(--blue);
-      color: #fff;
-    }
-
-    .completed-badge {
-      background: rgba(255,255,255,0.05);
-      color: var(--muted);
-      border: 1px solid var(--border);
-    }
-
-    .score-teams {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 14px;
-      margin-bottom: 14px;
-    }
-
-    .team-info {
-      flex: 1;
-    }
-
-    .team-info.right {
-      text-align: right;
-    }
-
-    .team-flag {
-      font-size: 28px;
-      margin-bottom: 6px;
-    }
-
-    .team-name {
-      font-size: 14px;
-      font-weight: 800;
-      line-height: 1.35;
-    }
-
-    .score-divider {
-      text-align: center;
-      flex-shrink: 0;
-    }
-
-    .score-num {
-      font-family: "Bebas Neue", sans-serif;
-      font-size: 42px;
-      line-height: 1;
-      letter-spacing: 1px;
-    }
-
-    .score-vs {
-      color: var(--muted);
-      font-size: 11px;
-      letter-spacing: 1px;
-      margin-top: 4px;
-    }
-
-    .score-time {
-      color: var(--muted);
-      font-size: 12px;
-    }
-
-    .competitions-grid {
-      grid-template-columns: repeat(3, 1fr);
-    }
-
-    .competition-card {
-      padding: 24px;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .competition-card::before {
-      content: "";
-      position: absolute;
-      inset: 0 auto 0 0;
-      width: 4px;
-      background: linear-gradient(to bottom, var(--gold), var(--green));
-    }
-
-    .competition-tag {
-      display: inline-block;
-      font-size: 11px;
-      font-weight: 800;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 14px;
-    }
-
-    .competition-card h3 {
-      font-size: 22px;
-      line-height: 1.15;
-      margin-bottom: 10px;
-    }
-
-    .competition-card p {
-      color: var(--muted);
-      line-height: 1.65;
-      font-size: 14px;
-      margin-bottom: 18px;
-    }
-
-    .competition-meta {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-    }
-
-    .competition-meta span {
-      font-size: 12px;
-      color: var(--text);
-      background: rgba(255,255,255,0.04);
-      border: 1px solid var(--border);
-      border-radius: 999px;
-      padding: 7px 11px;
-    }
-
-    .news-grid {
-      grid-template-columns: 1.5fr 1fr;
-      align-items: stretch;
-    }
-
-    .news-featured {
-      overflow: hidden;
-    }
-
-    .news-img-bg {
-      height: 250px;
-      background: linear-gradient(135deg, var(--blue), var(--green));
-      display: grid;
-      place-items: center;
-      font-size: 72px;
-    }
-
-    .news-content {
-      padding: 24px;
-    }
-
-    .news-cat {
-      display: inline-block;
-      background: rgba(0, 61, 165, 0.28);
-      color: #8bb0ff;
-      border-radius: 999px;
-      padding: 5px 10px;
-      font-size: 11px;
-      font-weight: 800;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      margin-bottom: 14px;
-    }
-
-    .news-content h3 {
-      font-size: 24px;
-      line-height: 1.25;
-      margin-bottom: 10px;
-    }
-
-    .news-content p {
-      color: var(--muted);
-      line-height: 1.7;
-      font-size: 15px;
-      margin-bottom: 16px;
-    }
-
-    .news-date {
-      font-size: 12px;
-      color: var(--muted);
-    }
-
-    .news-list {
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-    }
-
-    .news-item {
-      padding: 18px;
-    }
-
-    .news-item-cat {
-      font-size: 11px;
-      font-weight: 800;
-      color: var(--gold);
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      margin-bottom: 8px;
-    }
-
-    .news-item h4 {
-      font-size: 15px;
-      line-height: 1.45;
-      margin-bottom: 10px;
-    }
-
-    .news-item-date {
-      font-size: 12px;
-      color: var(--muted);
-    }
-
-    .teams-tabs {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-bottom: 28px;
-    }
-
-    .tab-btn {
-      border: 1px solid var(--border);
-      background: var(--glass);
-      color: var(--muted);
-      padding: 10px 18px;
-      border-radius: 999px;
-      font-size: 13px;
-      font-weight: 800;
-      cursor: pointer;
-    }
-
-    .tab-btn.active,
-    .tab-btn:hover {
-      background: var(--blue);
-      border-color: var(--blue);
-      color: var(--text);
-    }
-
-    .teams-grid {
-      grid-template-columns: repeat(4, 1fr);
-    }
-
-    .team-card {
-      padding: 28px 20px;
-      text-align: center;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .team-card::before {
-      content: "";
-      position: absolute;
-      left: 0;
-      right: 0;
-      top: 0;
-      height: 3px;
-      background: linear-gradient(90deg, var(--blue), var(--green), var(--gold));
-      transform: scaleX(0);
-      transition: transform 0.25s ease;
-    }
-
-    .team-card:hover::before {
-      transform: scaleX(1);
-    }
-
-    .team-emoji {
-      font-size: 40px;
-      display: inline-block;
-      margin-bottom: 14px;
-    }
-
-    .team-card h3 {
-      font-size: 18px;
-      margin-bottom: 6px;
-    }
-
-    .team-card p {
-      font-size: 13px;
-      color: var(--muted);
-      line-height: 1.6;
-      margin-bottom: 14px;
-    }
-
-    .team-record {
-      font-family: "Bebas Neue", sans-serif;
-      font-size: 34px;
-      line-height: 1;
-      color: var(--gold);
-    }
-
-    .team-record-label {
-      font-size: 11px;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      color: var(--muted);
-      margin-top: 4px;
-    }
-
-    .calendar-grid {
-      grid-template-columns: repeat(3, 1fr);
-    }
-
-    .calendar-card {
-      padding: 22px;
-    }
-
-    .calendar-date {
-      display: inline-block;
-      background: rgba(255, 209, 0, 0.12);
-      color: var(--gold);
-      border: 1px solid rgba(255, 209, 0, 0.18);
-      padding: 7px 12px;
-      border-radius: 999px;
-      font-size: 11px;
-      font-weight: 900;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-      margin-bottom: 14px;
-    }
-
-    .calendar-card h3 {
-      font-size: 19px;
-      line-height: 1.3;
-      margin-bottom: 8px;
-    }
-
-    .calendar-card p {
-      color: var(--muted);
-      line-height: 1.7;
-      font-size: 14px;
-      margin-bottom: 14px;
-    }
-
-    .calendar-meta {
-      font-size: 12px;
-      color: var(--text);
-      display: flex;
-      flex-direction: column;
-      gap: 6px;
-    }
-
-    footer {
-      background: var(--darker);
-      border-top: 1px solid var(--border);
-      padding: 64px 0 28px;
-    }
-
-    .footer-top {
-      grid-template-columns: 2fr 1fr 1fr 1fr;
-      margin-bottom: 34px;
-    }
-
-    .footer-brand p {
-      color: var(--muted);
-      line-height: 1.8;
-      font-size: 14px;
-      max-width: 460px;
-      margin: 14px 0 20px;
-    }
-
-    .footer-col h4 {
-      font-size: 12px;
-      color: var(--gold);
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      margin-bottom: 14px;
-    }
-
-    .footer-col ul {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-    }
-
-    .footer-col a {
-      color: var(--muted);
-      font-size: 14px;
-    }
-
-    .footer-col a:hover {
-      color: var(--text);
-    }
-
-    .social-links {
-      display: flex;
-      gap: 10px;
-      flex-wrap: wrap;
-    }
-
-    .social-link {
-      width: 38px;
-      height: 38px;
-      display: grid;
-      place-items: center;
-      border-radius: 10px;
-      background: var(--glass);
-      border: 1px solid var(--border);
-      font-size: 16px;
-    }
-
-    .social-link:hover {
-      border-color: var(--gold);
-      background: rgba(255, 209, 0, 0.08);
-    }
-
-    .footer-bottom {
-      border-top: 1px solid var(--border);
-      padding-top: 20px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 14px;
-      flex-wrap: wrap;
-    }
-
-    .footer-bottom p {
-      color: var(--muted);
-      font-size: 13px;
-    }
-
-    .reveal {
-      opacity: 0;
-      transform: translateY(26px);
-      transition: opacity 0.7s ease, transform 0.7s ease;
-    }
-
-    .reveal.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    @keyframes pulse {
-      0%, 100% { opacity: 1; }
-      50% { opacity: 0.35; }
-    }
-
-    @keyframes fadeUp {
-      from {
-        opacity: 0;
-        transform: translateY(26px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
+    .score-card:hover, .competition-card:hover, .news-featured:hover, .news-item:hover, .team-card:hover, .calendar-card:hover {
+      transform: translateY(-4px); border-color: rgba(255,209,0,0.24);
+    }
+    .score-card { padding: 24px; }
+    .score-card.live { border-color: rgba(232,17,45,0.45); }
+    .score-meta { display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap; margin-bottom: 20px; }
+    .score-league { font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: 1.2px; }
+    .live-badge, .upcoming-badge, .completed-badge { font-size: 10px; font-weight: 900; letter-spacing: 1px; padding: 4px 10px; border-radius: 999px; text-transform: uppercase; }
+    .live-badge { background: var(--red); color: #fff; }
+    .upcoming-badge { background: var(--blue); color: #fff; }
+    .completed-badge { background: rgba(255,255,255,0.05); color: var(--muted); border: 1px solid var(--border); }
+    .score-teams { display: flex; align-items: center; justify-content: space-between; gap: 14px; margin-bottom: 14px; }
+    .team-info { flex: 1; }
+    .team-info.right { text-align: right; }
+    .team-flag { font-size: 28px; margin-bottom: 6px; }
+    .team-name { font-size: 14px; font-weight: 800; line-height: 1.35; }
+    .score-divider { text-align: center; flex-shrink: 0; }
+    .score-num { font-family: "Bebas Neue", sans-serif; font-size: 42px; line-height: 1; letter-spacing: 1px; }
+    .score-vs { color: var(--muted); font-size: 11px; letter-spacing: 1px; margin-top: 4px; }
+    .score-time { color: var(--muted); font-size: 12px; }
+
+    .competitions-grid { grid-template-columns: repeat(3, 1fr); }
+    .competition-card { padding: 24px; position: relative; overflow: hidden; }
+    .competition-card::before { content: ""; position: absolute; inset: 0 auto 0 0; width: 4px; background: linear-gradient(to bottom, var(--gold), var(--green)); }
+    .competition-tag { display: inline-block; font-size: 11px; font-weight: 800; letter-spacing: 1px; text-transform: uppercase; color: var(--gold); margin-bottom: 14px; }
+    .competition-card h3 { font-size: 22px; line-height: 1.15; margin-bottom: 10px; }
+    .competition-card p { color: var(--muted); line-height: 1.65; font-size: 14px; margin-bottom: 18px; }
+    .competition-meta { display: flex; flex-wrap: wrap; gap: 10px; }
+    .competition-meta span { font-size: 12px; color: var(--text); background: rgba(255,255,255,0.04); border: 1px solid var(--border); border-radius: 999px; padding: 7px 11px; }
+
+    .news-grid { grid-template-columns: 1.5fr 1fr; align-items: stretch; }
+    .news-featured { overflow: hidden; }
+    .news-img-bg { height: 250px; background: linear-gradient(135deg, var(--blue), var(--green)); display: grid; place-items: center; font-size: 72px; }
+    .news-content { padding: 24px; }
+    .news-cat { display: inline-block; background: rgba(0,61,165,0.28); color: #8bb0ff; border-radius: 999px; padding: 5px 10px; font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 14px; }
+    .news-content h3 { font-size: 24px; line-height: 1.25; margin-bottom: 10px; }
+    .news-content p { color: var(--muted); line-height: 1.7; font-size: 15px; margin-bottom: 16px; }
+    .news-date { font-size: 12px; color: var(--muted); }
+    .news-list { display: flex; flex-direction: column; gap: 12px; }
+    .news-item { padding: 18px; }
+    .news-item-cat { font-size: 11px; font-weight: 800; color: var(--gold); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px; }
+    .news-item h4 { font-size: 15px; line-height: 1.45; margin-bottom: 10px; }
+    .news-item-date { font-size: 12px; color: var(--muted); }
+
+    .teams-tabs { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 28px; }
+    .tab-btn { border: 1px solid var(--border); background: var(--glass); color: var(--muted); padding: 10px 18px; border-radius: 999px; font-size: 13px; font-weight: 800; cursor: pointer; }
+    .tab-btn.active, .tab-btn:hover { background: var(--blue); border-color: var(--blue); color: var(--text); }
+
+    .teams-grid { grid-template-columns: repeat(4, 1fr); }
+    .team-card { padding: 28px 20px; text-align: center; position: relative; overflow: hidden; }
+    .team-card::before { content: ""; position: absolute; left: 0; right: 0; top: 0; height: 3px; background: linear-gradient(90deg, var(--blue), var(--green), var(--gold)); transform: scaleX(0); transition: transform 0.25s ease; }
+    .team-card:hover::before { transform: scaleX(1); }
+    .team-emoji { font-size: 40px; display: inline-block; margin-bottom: 14px; }
+    .team-card h3 { font-size: 18px; margin-bottom: 6px; }
+    .team-card p { font-size: 13px; color: var(--muted); line-height: 1.6; margin-bottom: 14px; }
+    .team-record { font-family: "Bebas Neue", sans-serif; font-size: 34px; line-height: 1; color: var(--gold); }
+    .team-record-label { font-size: 11px; text-transform: uppercase; letter-spacing: 1px; color: var(--muted); margin-top: 4px; }
+
+    .calendar-grid { grid-template-columns: repeat(3, 1fr); }
+    .calendar-card { padding: 22px; }
+    .calendar-date { display: inline-block; background: rgba(255,209,0,0.12); color: var(--gold); border: 1px solid rgba(255,209,0,0.18); padding: 7px 12px; border-radius: 999px; font-size: 11px; font-weight: 900; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 14px; }
+    .calendar-card h3 { font-size: 19px; line-height: 1.3; margin-bottom: 8px; }
+    .calendar-card p { color: var(--muted); line-height: 1.7; font-size: 14px; margin-bottom: 14px; }
+    .calendar-meta { font-size: 12px; color: var(--text); display: flex; flex-direction: column; gap: 6px; }
+
+    /* ── FOOTER ── */
+    footer { background: var(--darker); border-top: 1px solid var(--border); padding: 64px 0 28px; }
+    .footer-top { grid-template-columns: 2fr 1fr 1fr 1fr; margin-bottom: 34px; }
+    .footer-brand p { color: var(--muted); line-height: 1.8; font-size: 14px; max-width: 460px; margin: 14px 0 20px; }
+    .footer-col h4 { font-size: 12px; color: var(--gold); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 14px; }
+    .footer-col ul { display: flex; flex-direction: column; gap: 10px; }
+    .footer-col a { color: var(--muted); font-size: 14px; }
+    .footer-col a:hover { color: var(--text); }
+    .social-links { display: flex; gap: 10px; flex-wrap: wrap; }
+    .social-link { width: 38px; height: 38px; display: grid; place-items: center; border-radius: 10px; background: var(--glass); border: 1px solid var(--border); font-size: 16px; }
+    .social-link:hover { border-color: var(--gold); background: rgba(255,209,0,0.08); }
+    .footer-bottom { border-top: 1px solid var(--border); padding-top: 20px; display: flex; align-items: center; justify-content: space-between; gap: 14px; flex-wrap: wrap; }
+    .footer-bottom p { color: var(--muted); font-size: 13px; }
+
+    /* ── REVEAL ── */
+    .reveal { opacity: 0; transform: translateY(26px); transition: opacity 0.7s ease, transform 0.7s ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    /* ── KEYFRAMES ── */
+    @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.35; } }
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(26px); } to { opacity: 1; transform: translateY(0); } }
     @keyframes floatBall {
-      0%, 100% {
-        transform: translate3d(0, 0, 0) rotateX(0deg) rotateY(0deg) rotateZ(0deg);
-      }
-      50% {
-        transform: translate3d(0, -16px, 0) rotateX(0deg) rotateY(0deg) rotateZ(8deg);
-      }
+      0%, 100% { transform: translate3d(0, 0, 0) rotateZ(0deg); }
+      50%       { transform: translate3d(0, -16px, 0) rotateZ(6deg); }
     }
+    @keyframes tickerScroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
 
-    @keyframes tickerScroll {
-      from { transform: translateX(0); }
-      to { transform: translateX(-50%); }
-    }
-
+    /* ── RESPONSIVE ── */
     @media (max-width: 1100px) {
-      .hero-grid,
-      .news-grid,
-      .scores-grid,
-      .competitions-grid,
-      .calendar-grid,
-      .teams-grid,
-      .footer-top {
-        grid-template-columns: 1fr 1fr;
-      }
-
-      .hero-grid {
-        align-items: start;
-      }
-
-      .hero-copy {
-        max-width: 100%;
-      }
-
-      .footer-top {
-        grid-template-columns: 2fr 1fr 1fr;
-      }
+      .hero-grid, .news-grid, .scores-grid, .competitions-grid, .calendar-grid, .teams-grid, .footer-top { grid-template-columns: 1fr 1fr; }
+      .hero-grid { align-items: start; }
+      .hero-copy { max-width: 100%; }
+      .footer-top { grid-template-columns: 2fr 1fr 1fr; }
     }
-
     @media (max-width: 860px) {
-      .nav-links,
-      .nav-cta {
-        display: none;
-      }
-
-      .hamburger {
-        display: flex;
-      }
-
-      .hero {
-        padding: 42px 0 56px;
-      }
-
-      .hero-grid,
-      .news-grid,
-      .scores-grid,
-      .competitions-grid,
-      .calendar-grid,
-      .teams-grid,
-      .footer-top {
-        grid-template-columns: 1fr;
-      }
-
-      .hero-visual {
-        min-height: 320px;
-      }
-
-      .visual-ring {
-        width: 320px;
-        height: 320px;
-      }
-
-      .hero-mini-card.top {
-        top: 6px;
-        left: 0;
-      }
-
-      .hero-mini-card.bottom {
-        right: 0;
-        bottom: 0;
-      }
-
-      main section {
-        padding: 66px 0;
-      }
+      .nav-links, .nav-cta { display: none; }
+      .hamburger { display: flex; }
+      .hero { padding: 42px 0 56px; }
+      .hero-grid, .news-grid, .scores-grid, .competitions-grid, .calendar-grid, .teams-grid, .footer-top { grid-template-columns: 1fr; }
+      .hero-visual { min-height: 320px; }
+      .visual-ring { width: 320px; height: 320px; }
+      .hero-mini-card.top { top: 6px; left: 0; }
+      .hero-mini-card.bottom { right: 0; bottom: 0; }
+      main section { padding: 66px 0; }
+    }
+    @media (max-width: 640px) {
+      .container, .nav-inner { width: min(100% - 24px, var(--max-width)); }
+      .proposal-banner { padding-inline: 12px; }
+      .hero h1 { font-size: 54px; }
+      .hero-desc { font-size: 15px; }
+      .hero-btns { flex-direction: column; }
+      .btn-primary, .btn-outline { text-align: center; }
+      .score-teams { gap: 8px; }
+      .score-num { font-size: 34px; }
+      .news-img-bg { height: 180px; font-size: 54px; }
+      .hero-mini-card { min-width: 130px; padding: 12px 14px; }
+      .footer-bottom { flex-direction: column; text-align: center; }
     }
 
-    @media (max-width: 640px) {
-      .container,
-      .nav-inner {
-        width: min(100% - 24px, var(--max-width));
-      }
-
-      .proposal-banner {
-        padding-inline: 12px;
-      }
-
-      .hero h1 {
-        font-size: 54px;
-      }
-
-      .hero-desc {
-        font-size: 15px;
-      }
-
-      .hero-btns {
-        flex-direction: column;
-      }
-
-      .btn-primary,
-      .btn-outline {
-        text-align: center;
-      }
-
-      .score-teams {
-        gap: 8px;
-      }
-
-      .score-num {
-        font-size: 34px;
-      }
-
-      .news-img-bg {
-        height: 180px;
-        font-size: 54px;
-      }
-
-      .hero-mini-card {
-        min-width: 130px;
-        padding: 12px 14px;
-      }
-
-      .footer-bottom {
-        flex-direction: column;
-        text-align: center;
-      }
+    /* disable cursor animation on touch devices */
+    @media (hover: none) {
+      .ball-cursor { display: none; }
+      .volleyball { cursor: auto; }
     }
   </style>
 </head>
 <body>
+
   <div class="proposal-banner">
     <div class="proposal-inner">
       <p><strong>Website Redesign Proposal</strong> — Prepared for Rwanda Volleyball Federation (FRVB)</p>
@@ -3722,7 +437,6 @@ You can replace your current index.html with this whole file:
           <div class="logo-sub">Rwanda Volleyball</div>
         </div>
       </a>
-
       <div class="nav-links" id="desktopNav">
         <a href="#teams">Teams</a>
         <a href="#competitions">Competitions</a>
@@ -3730,7 +444,6 @@ You can replace your current index.html with this whole file:
         <a href="#calendar">Calendar</a>
         <a href="#about">About</a>
       </div>
-
       <div class="nav-actions">
         <a href="#calendar" class="nav-cta">Get Tickets</a>
         <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobileNav">
@@ -3749,6 +462,7 @@ You can replace your current index.html with this whole file:
     <a href="#calendar" class="mobile-cta">Get Tickets</a>
   </div>
 
+  <!-- ══════════════ HERO ══════════════ -->
   <header class="hero" id="top">
     <div class="hero-net" aria-hidden="true">
       <svg viewBox="0 0 1200 800" preserveAspectRatio="none">
@@ -3757,7 +471,7 @@ You can replace your current index.html with this whole file:
             <path d="M0 0 L42 42 M42 0 L0 42 M21 0 L21 42 M0 21 L42 21" stroke="white" stroke-width="0.45" fill="none"/>
           </pattern>
         </defs>
-        <rect width="1200" height="800" fill="url(#net)"></rect>
+        <rect width="1200" height="800" fill="url(#net)"/>
       </svg>
     </div>
 
@@ -3765,21 +479,17 @@ You can replace your current index.html with this whole file:
       <div class="hero-copy">
         <div class="hero-label">
           <span class="live-dot"></span>
-          It’s Official! The Africa Men’s Club Championship 2026 is coming to Kigali 🇷🇼
+          It's Official! The Africa Men's Club Championship 2026 is coming to Kigali 🇷🇼
         </div>
-
         <h1>Rwanda <span>Volleyball</span></h1>
-
         <p class="hero-desc">
           The official home of the Rwanda Volleyball Federation. Follow live scores, national teams,
           domestic competitions, tournament updates, and the latest stories shaping volleyball in Rwanda.
         </p>
-
         <div class="hero-btns">
           <a href="#match-centre" class="btn-primary">View Live Scores</a>
           <a href="#competitions" class="btn-outline">Explore Competitions</a>
         </div>
-
         <div class="hero-stats">
           <div class="stat-item">
             <div class="stat-num">24</div>
@@ -3796,7 +506,8 @@ You can replace your current index.html with this whole file:
         </div>
       </div>
 
-      <div class="hero-visual" aria-hidden="true" id="heroVisual">
+      <!-- ── THE BALL ── -->
+      <div class="hero-visual" id="heroVisual" aria-hidden="true">
         <div class="visual-ring"></div>
 
         <div class="hero-mini-card top">
@@ -3805,54 +516,110 @@ You can replace your current index.html with this whole file:
           <div class="mini-copy">National League Men · Set 3 ongoing</div>
         </div>
 
+        <!-- Cursor dot that tracks mouse inside the visual area -->
+        <div class="ball-cursor" id="ballCursor"></div>
+
         <div class="volleyball" id="heroBall">
-          <svg viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
             <defs>
-              <radialGradient id="ballBase" cx="35%" cy="30%" r="65%">
-                <stop offset="0%" stop-color="#ffffff"/>
-                <stop offset="55%" stop-color="#f3f3f0"/>
-                <stop offset="100%" stop-color="#cfcfc9"/>
+              <!-- Base white-to-cream gradient -->
+              <radialGradient id="ballBase" cx="36%" cy="30%" r="68%">
+                <stop offset="0%"   stop-color="#ffffff"/>
+                <stop offset="40%"  stop-color="#f5f4f0"/>
+                <stop offset="100%" stop-color="#c8c8c2"/>
               </radialGradient>
 
-              <radialGradient id="ballShadowFill" cx="72%" cy="78%" r="60%">
-                <stop offset="0%" stop-color="rgba(0,0,0,0)"/>
-                <stop offset="100%" stop-color="rgba(0,0,0,0.18)"/>
+              <!-- Secondary shading layer (bottom-right shadow) -->
+              <radialGradient id="ballShadow" cx="74%" cy="78%" r="58%">
+                <stop offset="0%"   stop-color="rgba(0,0,0,0)"/>
+                <stop offset="100%" stop-color="rgba(0,0,0,0.22)"/>
               </radialGradient>
 
-              <filter id="ballDropShadow" x="-30%" y="-30%" width="160%" height="160%">
-                <feDropShadow dx="0" dy="18" stdDeviation="12" flood-color="rgba(0,0,0,0.35)"/>
+              <!-- Highlight gradient (upper-left glow) -->
+              <radialGradient id="ballHighlight" cx="28%" cy="22%" r="45%">
+                <stop offset="0%"   stop-color="rgba(255,255,255,0.72)"/>
+                <stop offset="100%" stop-color="rgba(255,255,255,0)"/>
+              </radialGradient>
+
+              <!-- Drop shadow filter -->
+              <filter id="shadow" x="-25%" y="-25%" width="150%" height="160%">
+                <feGaussianBlur in="SourceAlpha" stdDeviation="14"/>
+                <feOffset dx="0" dy="22" result="offsetBlur"/>
+                <feComposite in="SourceGraphic" in2="offsetBlur" operator="over"/>
+                <feFlood flood-color="rgba(0,0,0,0.4)" result="color"/>
+                <feComposite in="color" in2="offsetBlur" operator="in" result="shadow"/>
+                <feMerge>
+                  <feMergeNode in="shadow"/>
+                  <feMergeNode in="SourceGraphic"/>
+                </feMerge>
               </filter>
+
+              <!-- Clip to ball circle -->
+              <clipPath id="ballClip">
+                <circle cx="200" cy="200" r="182"/>
+              </clipPath>
             </defs>
 
-            <g filter="url(#ballDropShadow)">
-              <circle cx="150" cy="150" r="138" fill="url(#ballBase)"/>
-              <circle cx="150" cy="150" r="138" fill="url(#ballShadowFill)" opacity="0.55"/>
+            <!-- Shadow layer (rendered outside clip so it shows below the ball) -->
+            <ellipse cx="200" cy="390" rx="160" ry="18"
+                     fill="rgba(0,0,0,0.28)"
+                     filter="url(#blurShadow)"/>
 
-              <path d="M150 15 C195 45 220 95 220 150 C220 205 195 255 150 285"
-                    fill="none" stroke="#003DA5" stroke-width="10" stroke-linecap="round"/>
-              <path d="M150 15 C105 45 80 95 80 150 C80 205 105 255 150 285"
-                    fill="none" stroke="#003DA5" stroke-width="10" stroke-linecap="round"/>
-              <path d="M15 150 C45 108 95 88 150 88 C205 88 255 108 285 150"
-                    fill="none" stroke="#003DA5" stroke-width="10" stroke-linecap="round"/>
-              <path d="M15 150 C45 192 95 212 150 212 C205 212 255 192 285 150"
-                    fill="none" stroke="#003DA5" stroke-width="10" stroke-linecap="round"/>
+            <g filter="url(#shadow)">
+              <!-- ① Ball base -->
+              <circle cx="200" cy="200" r="182" fill="url(#ballBase)"/>
 
-              <path d="M55 55 C95 78 120 112 128 150"
-                    fill="none" stroke="#1b4fb8" stroke-width="6" stroke-linecap="round" opacity="0.9"/>
-              <path d="M245 55 C205 78 180 112 172 150"
-                    fill="none" stroke="#1b4fb8" stroke-width="6" stroke-linecap="round" opacity="0.9"/>
-              <path d="M55 245 C95 222 120 188 128 150"
-                    fill="none" stroke="#1b4fb8" stroke-width="6" stroke-linecap="round" opacity="0.9"/>
-              <path d="M245 245 C205 222 180 188 172 150"
-                    fill="none" stroke="#1b4fb8" stroke-width="6" stroke-linecap="round" opacity="0.9"/>
+              <!-- ② All panel seams, clipped to sphere -->
+              <g clip-path="url(#ballClip)" fill="none">
 
-              <ellipse cx="105" cy="92" rx="42" ry="22"
-                       fill="rgba(255,255,255,0.45)"
-                       transform="rotate(-20 105 92)"/>
+                <!-- Vertical left seam pair -->
+                <path d="M200 20 C255 60 280 128 280 200 C280 272 255 340 200 380"
+                      stroke="#003DA5" stroke-width="12" stroke-linecap="round"/>
+                <path d="M200 20 C145 60 120 128 120 200 C120 272 145 340 200 380"
+                      stroke="#003DA5" stroke-width="12" stroke-linecap="round"/>
 
-              <circle cx="150" cy="150" r="138"
+                <!-- Horizontal top seam pair -->
+                <path d="M20 200 C60 148 128 122 200 122 C272 122 340 148 380 200"
+                      stroke="#003DA5" stroke-width="12" stroke-linecap="round"/>
+                <path d="M20 200 C60 252 128 278 200 278 C272 278 340 252 380 200"
+                      stroke="#003DA5" stroke-width="12" stroke-linecap="round"/>
+
+                <!-- Diagonal corner seams — top-left to center -->
+                <path d="M58 62 C102 92 148 138 168 200"
+                      stroke="#1a50c0" stroke-width="7.5" stroke-linecap="round" opacity="0.88"/>
+                <!-- top-right to center -->
+                <path d="M342 62 C298 92 252 138 232 200"
+                      stroke="#1a50c0" stroke-width="7.5" stroke-linecap="round" opacity="0.88"/>
+                <!-- bottom-left to center -->
+                <path d="M58 338 C102 308 148 262 168 200"
+                      stroke="#1a50c0" stroke-width="7.5" stroke-linecap="round" opacity="0.88"/>
+                <!-- bottom-right to center -->
+                <path d="M342 338 C298 308 252 262 232 200"
+                      stroke="#1a50c0" stroke-width="7.5" stroke-linecap="round" opacity="0.88"/>
+
+                <!-- Thin stitch details inside each main seam -->
+                <path d="M200 20 C255 60 280 128 280 200"
+                      stroke="rgba(255,255,255,0.18)" stroke-width="3" stroke-linecap="round"/>
+                <path d="M200 380 C145 340 120 272 120 200"
+                      stroke="rgba(255,255,255,0.18)" stroke-width="3" stroke-linecap="round"/>
+                <path d="M20 200 C60 148 128 122 200 122"
+                      stroke="rgba(255,255,255,0.18)" stroke-width="3" stroke-linecap="round"/>
+                <path d="M380 200 C340 252 272 278 200 278"
+                      stroke="rgba(255,255,255,0.18)" stroke-width="3" stroke-linecap="round"/>
+              </g>
+
+              <!-- ③ Shading overlay (bottom-right darkening) -->
+              <circle cx="200" cy="200" r="182" fill="url(#ballShadow)" opacity="0.6"/>
+
+              <!-- ④ Specular highlight (top-left) -->
+              <ellipse cx="142" cy="118" rx="72" ry="46"
+                       fill="url(#ballHighlight)"
+                       transform="rotate(-28 142 118)"/>
+
+              <!-- ⑤ Rim stroke -->
+              <circle cx="200" cy="200" r="182"
                       fill="none"
-                      stroke="rgba(0,0,0,0.12)"
+                      stroke="rgba(0,0,0,0.14)"
                       stroke-width="4"/>
             </g>
           </svg>
@@ -3867,6 +634,7 @@ You can replace your current index.html with this whole file:
     </div>
   </header>
 
+  <!-- ══ TICKER ══ -->
   <div class="ticker" aria-label="Latest updates">
     <div class="ticker-track">
       <div class="ticker-item">#RNVL Playoffs Semis Game 5 — Police 1–3 Kepler <span class="dot">●</span></div>
@@ -3874,7 +642,6 @@ You can replace your current index.html with this whole file:
       <div class="ticker-item">National Volleyball League Finals — April 12, 2026 <span class="dot">●</span></div>
       <div class="ticker-item">Valentine Munezero named MVP of the Month <span class="dot">●</span></div>
       <div class="ticker-item">Beach Volleyball National Team selection camp opens <span class="dot">●</span></div>
-
       <div class="ticker-item">#RNVL Playoffs Semis Game 5 — Police 1–3 Kepler <span class="dot">●</span></div>
       <div class="ticker-item">Rwanda Women qualify for CAVB Championship <span class="dot">●</span></div>
       <div class="ticker-item">National Volleyball League Finals — April 12, 2026 <span class="dot">●</span></div>
@@ -3883,7 +650,10 @@ You can replace your current index.html with this whole file:
     </div>
   </div>
 
+  <!-- ══════════════ MAIN ══════════════ -->
   <main>
+
+    <!-- MATCH CENTRE -->
     <section class="scores-section reveal" id="match-centre">
       <div class="container">
         <div class="section-head">
@@ -3893,7 +663,6 @@ You can replace your current index.html with this whole file:
           </div>
           <a href="#calendar" class="ghost-link">Full Schedule</a>
         </div>
-
         <div class="scores-grid">
           <article class="score-card live">
             <div class="score-meta">
@@ -3901,18 +670,9 @@ You can replace your current index.html with this whole file:
               <span class="live-badge">Live Set 3</span>
             </div>
             <div class="score-teams">
-              <div class="team-info">
-                <div class="team-flag">🏐</div>
-                <div class="team-name">APR Volleyball Club</div>
-              </div>
-              <div class="score-divider">
-                <div class="score-num">2 — 1</div>
-                <div class="score-vs">21 · 18 · 21</div>
-              </div>
-              <div class="team-info right">
-                <div class="team-flag">🏐</div>
-                <div class="team-name">REG Volleyball</div>
-              </div>
+              <div class="team-info"><div class="team-flag">🏐</div><div class="team-name">APR Volleyball Club</div></div>
+              <div class="score-divider"><div class="score-num">2 — 1</div><div class="score-vs">21 · 18 · 21</div></div>
+              <div class="team-info right"><div class="team-flag">🏐</div><div class="team-name">REG Volleyball</div></div>
             </div>
             <div class="score-time">Amahoro Indoor Stadium · Kigali</div>
           </article>
@@ -3923,18 +683,9 @@ You can replace your current index.html with this whole file:
               <span class="upcoming-badge">Today 18:30</span>
             </div>
             <div class="score-teams">
-              <div class="team-info">
-                <div class="team-flag">🏐</div>
-                <div class="team-name">IPRC Kigali</div>
-              </div>
-              <div class="score-divider">
-                <div class="score-num">vs</div>
-                <div class="score-vs">Kick-off soon</div>
-              </div>
-              <div class="team-info right">
-                <div class="team-flag">🏐</div>
-                <div class="team-name">Police Volleyball</div>
-              </div>
+              <div class="team-info"><div class="team-flag">🏐</div><div class="team-name">IPRC Kigali</div></div>
+              <div class="score-divider"><div class="score-num">vs</div><div class="score-vs">Kick-off soon</div></div>
+              <div class="team-info right"><div class="team-flag">🏐</div><div class="team-name">Police Volleyball</div></div>
             </div>
             <div class="score-time">Petit Stade · Kigali</div>
           </article>
@@ -3945,18 +696,9 @@ You can replace your current index.html with this whole file:
               <span class="completed-badge">Final</span>
             </div>
             <div class="score-teams">
-              <div class="team-info">
-                <div class="team-flag">🏐</div>
-                <div class="team-name">Rwanda Energy Group</div>
-              </div>
-              <div class="score-divider">
-                <div class="score-num">3 — 0</div>
-                <div class="score-vs">25 · 22 · 25</div>
-              </div>
-              <div class="team-info right">
-                <div class="team-flag">🏐</div>
-                <div class="team-name">Gisagara VC</div>
-              </div>
+              <div class="team-info"><div class="team-flag">🏐</div><div class="team-name">Rwanda Energy Group</div></div>
+              <div class="score-divider"><div class="score-num">3 — 0</div><div class="score-vs">25 · 22 · 25</div></div>
+              <div class="team-info right"><div class="team-flag">🏐</div><div class="team-name">Gisagara VC</div></div>
             </div>
             <div class="score-time">BK Arena · Kigali</div>
           </article>
@@ -3964,6 +706,7 @@ You can replace your current index.html with this whole file:
       </div>
     </section>
 
+    <!-- COMPETITIONS -->
     <section class="competitions-section reveal" id="competitions">
       <div class="container">
         <div class="section-head">
@@ -3971,54 +714,32 @@ You can replace your current index.html with this whole file:
             <div class="section-label">Domestic & International</div>
             <h2 class="section-title">Competitions</h2>
           </div>
-          <p class="section-subtitle">
-            Follow major tournaments, league action, and federation events across indoor and beach volleyball.
-          </p>
+          <p class="section-subtitle">Follow major tournaments, league action, and federation events across indoor and beach volleyball.</p>
         </div>
-
         <div class="competitions-grid">
           <article class="competition-card">
             <span class="competition-tag">Featured Tournament</span>
-            <h3>Africa Men’s Club Championship 2026</h3>
-            <p>
-              Kigali prepares to host one of the biggest club volleyball events on the continent, bringing elite competition and regional visibility to Rwanda.
-            </p>
-            <div class="competition-meta">
-              <span>Kigali</span>
-              <span>International</span>
-              <span>Men’s Clubs</span>
-            </div>
+            <h3>Africa Men's Club Championship 2026</h3>
+            <p>Kigali prepares to host one of the biggest club volleyball events on the continent, bringing elite competition and regional visibility to Rwanda.</p>
+            <div class="competition-meta"><span>Kigali</span><span>International</span><span>Men's Clubs</span></div>
           </article>
-
           <article class="competition-card">
             <span class="competition-tag">National League</span>
             <h3>Rwanda National Volleyball League</h3>
-            <p>
-              The country’s top domestic competition featuring the strongest men’s and women’s clubs competing through regular season and playoffs.
-            </p>
-            <div class="competition-meta">
-              <span>Men & Women</span>
-              <span>Season Ongoing</span>
-              <span>League Format</span>
-            </div>
+            <p>The country's top domestic competition featuring the strongest men's and women's clubs competing through regular season and playoffs.</p>
+            <div class="competition-meta"><span>Men & Women</span><span>Season Ongoing</span><span>League Format</span></div>
           </article>
-
           <article class="competition-card">
             <span class="competition-tag">Development Pathway</span>
             <h3>Youth & Beach Volleyball Circuit</h3>
-            <p>
-              A growing platform for identifying future national talent, strengthening grassroots development, and increasing nationwide participation.
-            </p>
-            <div class="competition-meta">
-              <span>Youth Focus</span>
-              <span>Beach Volleyball</span>
-              <span>Talent Growth</span>
-            </div>
+            <p>A growing platform for identifying future national talent, strengthening grassroots development, and increasing nationwide participation.</p>
+            <div class="competition-meta"><span>Youth Focus</span><span>Beach Volleyball</span><span>Talent Growth</span></div>
           </article>
         </div>
       </div>
     </section>
 
+    <!-- NEWS -->
     <section class="news-section reveal" id="news">
       <div class="container">
         <div class="section-head">
@@ -4028,39 +749,32 @@ You can replace your current index.html with this whole file:
           </div>
           <a href="#about" class="ghost-link">Media Centre</a>
         </div>
-
         <div class="news-grid">
           <article class="news-featured">
             <div class="news-img-bg">🏆</div>
             <div class="news-content">
               <span class="news-cat">Featured</span>
               <h3>Rwanda ready to welcome continental club volleyball to Kigali</h3>
-              <p>
-                Federation preparations continue as Rwanda builds momentum to host a flagship African volleyball event, with focus on fan experience, venue readiness, and regional participation.
-              </p>
+              <p>Federation preparations continue as Rwanda builds momentum to host a flagship African volleyball event, with focus on fan experience, venue readiness, and regional participation.</p>
               <div class="news-date">March 2026</div>
             </div>
           </article>
-
           <div class="news-list">
             <article class="news-item">
               <div class="news-item-cat">National Teams</div>
-              <h4>Women’s national side secures qualification and shifts focus to final camp preparation</h4>
+              <h4>Women's national side secures qualification and shifts focus to final camp preparation</h4>
               <div class="news-item-date">March 2026</div>
             </article>
-
             <article class="news-item">
               <div class="news-item-cat">League</div>
               <h4>Playoff intensity rises as title contenders separate themselves in decisive fixtures</h4>
               <div class="news-item-date">March 2026</div>
             </article>
-
             <article class="news-item">
               <div class="news-item-cat">Player Spotlight</div>
               <h4>Valentine Munezero earns monthly honors after standout performances</h4>
               <div class="news-item-date">March 2026</div>
             </article>
-
             <article class="news-item">
               <div class="news-item-cat">Development</div>
               <h4>Beach volleyball selection camp opens with focus on youth pipeline and national depth</h4>
@@ -4071,6 +785,7 @@ You can replace your current index.html with this whole file:
       </div>
     </section>
 
+    <!-- TEAMS -->
     <section class="teams-section reveal" id="teams">
       <div class="container">
         <div class="section-head">
@@ -4078,86 +793,28 @@ You can replace your current index.html with this whole file:
             <div class="section-label">Programs & Squads</div>
             <h2 class="section-title">National Teams</h2>
           </div>
-          <p class="section-subtitle">
-            A structured national program spanning senior, youth, and beach volleyball categories.
-          </p>
+          <p class="section-subtitle">A structured national program spanning senior, youth, and beach volleyball categories.</p>
         </div>
-
         <div class="teams-tabs">
           <button class="tab-btn active" data-filter="all">All Teams</button>
           <button class="tab-btn" data-filter="senior">Senior</button>
           <button class="tab-btn" data-filter="youth">Youth</button>
           <button class="tab-btn" data-filter="beach">Beach</button>
         </div>
-
         <div class="teams-grid" id="teamsGrid">
-          <article class="team-card" data-category="senior">
-            <span class="team-emoji">🇷🇼</span>
-            <h3>Senior Men</h3>
-            <p>Elite national squad competing at continental and regional level.</p>
-            <div class="team-record">14–6</div>
-            <div class="team-record-label">Recent Record</div>
-          </article>
-
-          <article class="team-card" data-category="senior">
-            <span class="team-emoji">🇷🇼</span>
-            <h3>Senior Women</h3>
-            <p>National women’s team building consistency and continental presence.</p>
-            <div class="team-record">12–5</div>
-            <div class="team-record-label">Recent Record</div>
-          </article>
-
-          <article class="team-card" data-category="youth">
-            <span class="team-emoji">🌟</span>
-            <h3>U21 Men</h3>
-            <p>Emerging talent pipeline with focus on transition to senior competition.</p>
-            <div class="team-record">9–4</div>
-            <div class="team-record-label">Development Cycle</div>
-          </article>
-
-          <article class="team-card" data-category="youth">
-            <span class="team-emoji">🌟</span>
-            <h3>U21 Women</h3>
-            <p>High-potential team preparing the next generation of national players.</p>
-            <div class="team-record">10–3</div>
-            <div class="team-record-label">Development Cycle</div>
-          </article>
-
-          <article class="team-card" data-category="youth">
-            <span class="team-emoji">🚀</span>
-            <h3>U19 Men</h3>
-            <p>Early-stage national prospects identified through domestic scouting.</p>
-            <div class="team-record">Talent Pool</div>
-            <div class="team-record-label">Youth Program</div>
-          </article>
-
-          <article class="team-card" data-category="youth">
-            <span class="team-emoji">🚀</span>
-            <h3>U19 Women</h3>
-            <p>Structured youth pathway feeding long-term high-performance plans.</p>
-            <div class="team-record">Talent Pool</div>
-            <div class="team-record-label">Youth Program</div>
-          </article>
-
-          <article class="team-card" data-category="beach">
-            <span class="team-emoji">🏖️</span>
-            <h3>Beach Men</h3>
-            <p>Dedicated pairs program expanding Rwanda’s presence in beach volleyball.</p>
-            <div class="team-record">6 Events</div>
-            <div class="team-record-label">Circuit Focus</div>
-          </article>
-
-          <article class="team-card" data-category="beach">
-            <span class="team-emoji">☀️</span>
-            <h3>Beach Women</h3>
-            <p>Competitive beach unit with emphasis on rankings, selection, and exposure.</p>
-            <div class="team-record">4 Pairs</div>
-            <div class="team-record-label">Active Squad</div>
-          </article>
+          <article class="team-card" data-category="senior"><span class="team-emoji">🇷🇼</span><h3>Senior Men</h3><p>Elite national squad competing at continental and regional level.</p><div class="team-record">14–6</div><div class="team-record-label">Recent Record</div></article>
+          <article class="team-card" data-category="senior"><span class="team-emoji">🇷🇼</span><h3>Senior Women</h3><p>National women's team building consistency and continental presence.</p><div class="team-record">12–5</div><div class="team-record-label">Recent Record</div></article>
+          <article class="team-card" data-category="youth"><span class="team-emoji">🌟</span><h3>U21 Men</h3><p>Emerging talent pipeline with focus on transition to senior competition.</p><div class="team-record">9–4</div><div class="team-record-label">Development Cycle</div></article>
+          <article class="team-card" data-category="youth"><span class="team-emoji">🌟</span><h3>U21 Women</h3><p>High-potential team preparing the next generation of national players.</p><div class="team-record">10–3</div><div class="team-record-label">Development Cycle</div></article>
+          <article class="team-card" data-category="youth"><span class="team-emoji">🚀</span><h3>U19 Men</h3><p>Early-stage national prospects identified through domestic scouting.</p><div class="team-record">Talent Pool</div><div class="team-record-label">Youth Program</div></article>
+          <article class="team-card" data-category="youth"><span class="team-emoji">🚀</span><h3>U19 Women</h3><p>Structured youth pathway feeding long-term high-performance plans.</p><div class="team-record">Talent Pool</div><div class="team-record-label">Youth Program</div></article>
+          <article class="team-card" data-category="beach"><span class="team-emoji">🏖️</span><h3>Beach Men</h3><p>Dedicated pairs program expanding Rwanda's presence in beach volleyball.</p><div class="team-record">6 Events</div><div class="team-record-label">Circuit Focus</div></article>
+          <article class="team-card" data-category="beach"><span class="team-emoji">☀️</span><h3>Beach Women</h3><p>Competitive beach unit with emphasis on rankings, selection, and exposure.</p><div class="team-record">4 Pairs</div><div class="team-record-label">Active Squad</div></article>
         </div>
       </div>
     </section>
 
+    <!-- CALENDAR -->
     <section class="calendar-section reveal" id="calendar">
       <div class="container">
         <div class="section-head">
@@ -4165,45 +822,32 @@ You can replace your current index.html with this whole file:
             <div class="section-label">Dates to Watch</div>
             <h2 class="section-title">Calendar</h2>
           </div>
-          <p class="section-subtitle">
-            Upcoming fixtures, events, federation activities, and competition milestones.
-          </p>
+          <p class="section-subtitle">Upcoming fixtures, events, federation activities, and competition milestones.</p>
         </div>
-
         <div class="calendar-grid">
           <article class="calendar-card">
             <span class="calendar-date">Apr 12, 2026</span>
             <h3>National Volleyball League Finals</h3>
             <p>Championship finals expected to bring the strongest domestic clubs together in Kigali.</p>
-            <div class="calendar-meta">
-              <span>📍 Kigali</span>
-              <span>🕒 Full-day event</span>
-            </div>
+            <div class="calendar-meta"><span>📍 Kigali</span><span>🕒 Full-day event</span></div>
           </article>
-
           <article class="calendar-card">
             <span class="calendar-date">Apr 18, 2026</span>
             <h3>Beach Volleyball Selection Camp</h3>
             <p>Open selection and evaluation session for athletes targeting national beach competition opportunities.</p>
-            <div class="calendar-meta">
-              <span>📍 Training Venue TBA</span>
-              <span>🕒 Morning Session</span>
-            </div>
+            <div class="calendar-meta"><span>📍 Training Venue TBA</span><span>🕒 Morning Session</span></div>
           </article>
-
           <article class="calendar-card">
             <span class="calendar-date">May 2026</span>
-            <h3>Africa Men’s Club Championship</h3>
+            <h3>Africa Men's Club Championship</h3>
             <p>International competition hosted in Kigali, showcasing top club teams across the continent.</p>
-            <div class="calendar-meta">
-              <span>📍 Kigali</span>
-              <span>🎟️ Ticketing to open soon</span>
-            </div>
+            <div class="calendar-meta"><span>📍 Kigali</span><span>🎟️ Ticketing to open soon</span></div>
           </article>
         </div>
       </div>
     </section>
 
+    <!-- ABOUT -->
     <section class="about-section reveal" id="about">
       <div class="container">
         <div class="section-head">
@@ -4211,67 +855,43 @@ You can replace your current index.html with this whole file:
             <div class="section-label">Federation Overview</div>
             <h2 class="section-title">About FRVB</h2>
           </div>
-          <p class="section-subtitle">
-            The Rwanda Volleyball Federation supports competition, athlete development, national representation, and the growth of volleyball across the country.
-          </p>
+          <p class="section-subtitle">The Rwanda Volleyball Federation supports competition, athlete development, national representation, and the growth of volleyball across the country.</p>
         </div>
-
         <div class="competitions-grid">
           <article class="competition-card">
             <span class="competition-tag">Mission</span>
             <h3>Grow the game nationally</h3>
-            <p>
-              Promote inclusive participation, strengthen the competition ecosystem, and create pathways from grassroots to elite performance.
-            </p>
-            <div class="competition-meta">
-              <span>Development</span>
-              <span>Access</span>
-            </div>
+            <p>Promote inclusive participation, strengthen the competition ecosystem, and create pathways from grassroots to elite performance.</p>
+            <div class="competition-meta"><span>Development</span><span>Access</span></div>
           </article>
-
           <article class="competition-card">
             <span class="competition-tag">Performance</span>
             <h3>Build stronger national teams</h3>
-            <p>
-              Support scouting, training, competition exposure, and long-term player progression across age groups and disciplines.
-            </p>
-            <div class="competition-meta">
-              <span>Elite Pathways</span>
-              <span>Preparation</span>
-            </div>
+            <p>Support scouting, training, competition exposure, and long-term player progression across age groups and disciplines.</p>
+            <div class="competition-meta"><span>Elite Pathways</span><span>Preparation</span></div>
           </article>
-
           <article class="competition-card">
             <span class="competition-tag">Visibility</span>
             <h3>Modernize volleyball communication</h3>
-            <p>
-              Deliver a digital-first federation presence with better storytelling, live updates, competition coverage, and fan engagement.
-            </p>
-            <div class="competition-meta">
-              <span>Media</span>
-              <span>Fan Experience</span>
-            </div>
+            <p>Deliver a digital-first federation presence with better storytelling, live updates, competition coverage, and fan engagement.</p>
+            <div class="competition-meta"><span>Media</span><span>Fan Experience</span></div>
           </article>
         </div>
       </div>
     </section>
+
   </main>
 
+  <!-- ══ FOOTER ══ -->
   <footer>
     <div class="container">
       <div class="footer-top">
         <div class="footer-brand">
           <div class="nav-logo">
             <div class="logo-badge">FRVB</div>
-            <div>
-              <div class="logo-text">FRVB</div>
-              <div class="logo-sub">Rwanda Volleyball</div>
-            </div>
+            <div><div class="logo-text">FRVB</div><div class="logo-sub">Rwanda Volleyball</div></div>
           </div>
-          <p>
-            A modern digital home for Rwandan volleyball — designed to showcase competitions,
-            national teams, federation updates, and fan engagement in one place.
-          </p>
+          <p>A modern digital home for Rwandan volleyball — designed to showcase competitions, national teams, federation updates, and fan engagement in one place.</p>
           <div class="social-links">
             <a href="#" class="social-link" aria-label="Facebook">f</a>
             <a href="#" class="social-link" aria-label="Instagram">◎</a>
@@ -4279,7 +899,6 @@ You can replace your current index.html with this whole file:
             <a href="#" class="social-link" aria-label="YouTube">▶</a>
           </div>
         </div>
-
         <div class="footer-col">
           <h4>Explore</h4>
           <ul>
@@ -4289,7 +908,6 @@ You can replace your current index.html with this whole file:
             <li><a href="#calendar">Calendar</a></li>
           </ul>
         </div>
-
         <div class="footer-col">
           <h4>Federation</h4>
           <ul>
@@ -4299,7 +917,6 @@ You can replace your current index.html with this whole file:
             <li><a href="#">Media Centre</a></li>
           </ul>
         </div>
-
         <div class="footer-col">
           <h4>Contact</h4>
           <ul>
@@ -4310,7 +927,6 @@ You can replace your current index.html with this whole file:
           </ul>
         </div>
       </div>
-
       <div class="footer-bottom">
         <p>© 2026 Rwanda Volleyball Federation. Demo redesign concept.</p>
         <p>Designed for presentation and further development.</p>
@@ -4318,9 +934,11 @@ You can replace your current index.html with this whole file:
     </div>
   </footer>
 
+  <!-- ══════════════ SCRIPTS ══════════════ -->
   <script>
+    /* ── Mobile nav ── */
     const hamburger = document.getElementById("hamburger");
-    const mobileNav = document.getElementById("mobileNav");
+    const mobileNav  = document.getElementById("mobileNav");
     const mobileLinks = mobileNav.querySelectorAll("a");
 
     hamburger.addEventListener("click", () => {
@@ -4329,153 +947,153 @@ You can replace your current index.html with this whole file:
       hamburger.setAttribute("aria-expanded", isOpen ? "true" : "false");
       document.body.classList.toggle("menu-open", isOpen);
     });
+    mobileLinks.forEach(link => link.addEventListener("click", () => {
+      mobileNav.classList.remove("open");
+      hamburger.classList.remove("open");
+      hamburger.setAttribute("aria-expanded", "false");
+      document.body.classList.remove("menu-open");
+    }));
 
-    mobileLinks.forEach(link => {
-      link.addEventListener("click", () => {
-        mobileNav.classList.remove("open");
-        hamburger.classList.remove("open");
-        hamburger.setAttribute("aria-expanded", "false");
-        document.body.classList.remove("menu-open");
-      });
-    });
-
-    const revealItems = document.querySelectorAll(".reveal");
+    /* ── Reveal on scroll ── */
     const revealObserver = new IntersectionObserver(
-      entries => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("visible");
-          }
-        });
-      },
+      entries => entries.forEach(e => { if (e.isIntersecting) e.target.classList.add("visible"); }),
       { threshold: 0.15 }
     );
+    document.querySelectorAll(".reveal").forEach(el => revealObserver.observe(el));
 
-    revealItems.forEach(item => revealObserver.observe(item));
-
+    /* ── Active nav link ── */
     const navLinks = document.querySelectorAll(".nav-links a");
     const sections = [...document.querySelectorAll("main section, header.hero")];
-
     function setActiveLink() {
       const scrollY = window.scrollY + 140;
       let currentId = "top";
-
-      sections.forEach(section => {
-        if (scrollY >= section.offsetTop) {
-          currentId = section.id;
-        }
-      });
-
+      sections.forEach(s => { if (scrollY >= s.offsetTop) currentId = s.id; });
       navLinks.forEach(link => {
-        const href = link.getAttribute("href").replace("#", "");
+        const href = link.getAttribute("href").replace("#","");
         link.classList.toggle("active", href === currentId);
       });
     }
-
     window.addEventListener("scroll", setActiveLink);
     window.addEventListener("load", setActiveLink);
 
-    const tabButtons = document.querySelectorAll(".tab-btn");
-    const teamCards = document.querySelectorAll(".team-card");
-
-    tabButtons.forEach(button => {
-      button.addEventListener("click", () => {
-        const filter = button.dataset.filter;
-
-        tabButtons.forEach(btn => btn.classList.remove("active"));
-        button.classList.add("active");
-
-        teamCards.forEach(card => {
-          const category = card.dataset.category;
-          const show = filter === "all" || category === filter;
-          card.style.display = show ? "block" : "none";
+    /* ── Team tab filter ── */
+    document.querySelectorAll(".tab-btn").forEach(btn => {
+      btn.addEventListener("click", () => {
+        const filter = btn.dataset.filter;
+        document.querySelectorAll(".tab-btn").forEach(b => b.classList.remove("active"));
+        btn.classList.add("active");
+        document.querySelectorAll(".team-card").forEach(card => {
+          card.style.display = (filter === "all" || card.dataset.category === filter) ? "block" : "none";
         });
       });
     });
 
-    const heroBall = document.getElementById("heroBall");
+    /* ══════════════════════════════════════════
+       VOLLEYBALL — MOUSE + SCROLL INTERACTION
+    ══════════════════════════════════════════ */
+    const heroBall   = document.getElementById("heroBall");
     const heroVisual = document.getElementById("heroVisual");
+    const cursor     = document.getElementById("ballCursor");
 
-    let mouseX = 0;
-    let mouseY = 0;
-    let currentX = 0;
-    let currentY = 0;
-    let scrollRotateZ = 0;
-    let scrollRotateX = 0;
-    let scrollTranslateX = 0;
-    let scrollTranslateY = 0;
+    // State
+    let mouseRotX = 0, mouseRotY = 0, mouseRotZ = 0;
+    let targetRotX = 0, targetRotY = 0, targetRotZ = 0;
+    let scrollTX = 0, scrollTY = 0, scrollRZ = 0, scrollRX = 0;
+    let isHovering = false;
+    let cursorX = 0, cursorY = 0;
+    let rafId = null;
 
-    function updateBallByScroll() {
-      if (!heroBall || !heroVisual) return;
+    /* — Scroll handler — */
+    function calcScrollState() {
+      if (!heroVisual) return;
+      const rect    = heroVisual.getBoundingClientRect();
+      const vh      = window.innerHeight;
+      const centerY = rect.top + rect.height / 2;
+      // progress: -1 (hero above) → 0 (hero centred) → +1 (hero below)
+      const progress = Math.max(-1, Math.min(1, (vh * 0.5 - centerY) / vh));
 
-      const rect = heroVisual.getBoundingClientRect();
-      const viewportHeight = window.innerHeight || document.documentElement.clientHeight;
-
-      const progress = Math.max(
-        -1,
-        Math.min(1, (viewportHeight * 0.5 - rect.top - rect.height * 0.5) / viewportHeight)
-      );
-
-      scrollRotateZ = progress * 38;
-      scrollRotateX = progress * -10;
-      scrollTranslateY = progress * -18;
-      scrollTranslateX = progress * 10;
+      scrollRZ = progress * 42;       // spin on scroll
+      scrollRX = progress * -12;      // tilt back/forward
+      scrollTY = progress * -22;      // float up as you scroll past
+      scrollTX = progress *  8;       // slight horizontal drift
     }
 
+    /* — Mouse handler — */
     function handleMouseMove(e) {
       if (!heroVisual) return;
       const rect = heroVisual.getBoundingClientRect();
+      // Normalise mouse position to -1 → +1 relative to hero visual centre
+      const nx = ((e.clientX - rect.left)  / rect.width  - 0.5) * 2;
+      const ny = ((e.clientY - rect.top)   / rect.height - 0.5) * 2;
 
-      const x = (e.clientX - rect.left) / rect.width;
-      const y = (e.clientY - rect.top) / rect.height;
+      targetRotY = nx * 28;           // tilt left / right
+      targetRotX = -ny * 18;         // tilt up / down
+      targetRotZ = nx * ny * 8;      // subtle twist
 
-      mouseX = (x - 0.5) * 20;
-      mouseY = (y - 0.5) * -20;
+      // Move cursor dot
+      cursorX = e.clientX - rect.left;
+      cursorY = e.clientY - rect.top;
+      if (cursor) {
+        cursor.style.left = cursorX + "px";
+        cursor.style.top  = cursorY + "px";
+      }
     }
 
-    function resetMouseEffect() {
-      mouseX = 0;
-      mouseY = 0;
+    function handleMouseLeave() {
+      targetRotX = 0;
+      targetRotY = 0;
+      targetRotZ = 0;
+      isHovering = false;
     }
 
-    function animateBall() {
-      currentX += (mouseX - currentX) * 0.08;
-      currentY += (mouseY - currentY) * 0.08;
+    function handleMouseEnter() { isHovering = true; }
+
+    /* — Animation loop (lerp mouse towards target) — */
+    const LERP = 0.07;   // smoothing factor (lower = smoother / slower)
+    function lerp(a, b, t) { return a + (b - a) * t; }
+
+    function tick() {
+      // Smooth mouse rotation
+      mouseRotX = lerp(mouseRotX, targetRotX, LERP);
+      mouseRotY = lerp(mouseRotY, targetRotY, LERP);
+      mouseRotZ = lerp(mouseRotZ, targetRotZ, LERP);
+
+      const rX = scrollRX + mouseRotX;
+      const rY = mouseRotY;
+      const rZ = scrollRZ + mouseRotZ;
+      const tX = scrollTX;
+      const tY = scrollTY;
 
       if (heroBall) {
-        heroBall.style.transform = `
-          translate3d(${scrollTranslateX + currentX * 0.35}px, ${scrollTranslateY + currentY * 0.35}px, 0)
-          rotateX(${scrollRotateX + currentY * 0.45}deg)
-          rotateY(${currentX * 0.65}deg)
-          rotateZ(${scrollRotateZ + currentX * 0.2}deg)
-        `;
+        heroBall.style.transform =
+          `translate3d(${tX}px, ${tY}px, 0) rotateX(${rX}deg) rotateY(${rY}deg) rotateZ(${rZ}deg)`;
       }
 
-      requestAnimationFrame(animateBall);
+      rafId = requestAnimationFrame(tick);
     }
 
-    let scrollTicking = false;
-
-    function handleScrollBall() {
-      if (!scrollTicking) {
-        window.requestAnimationFrame(() => {
-          updateBallByScroll();
-          scrollTicking = false;
-        });
-        scrollTicking = true;
+    /* — Scroll throttle — */
+    let scrollPending = false;
+    window.addEventListener("scroll", () => {
+      if (!scrollPending) {
+        requestAnimationFrame(() => { calcScrollState(); scrollPending = false; });
+        scrollPending = true;
       }
-    }
+    }, { passive: true });
 
+    window.addEventListener("resize", calcScrollState);
+
+    /* — Attach mouse events — */
     if (heroVisual) {
-      heroVisual.addEventListener("mousemove", handleMouseMove);
-      heroVisual.addEventListener("mouseleave", resetMouseEffect);
+      heroVisual.addEventListener("mousemove",  handleMouseMove);
+      heroVisual.addEventListener("mouseleave", handleMouseLeave);
+      heroVisual.addEventListener("mouseenter", handleMouseEnter);
     }
 
-    window.addEventListener("scroll", handleScrollBall, { passive: true });
-    window.addEventListener("resize", updateBallByScroll);
+    /* — Kick off — */
     window.addEventListener("load", () => {
-      updateBallByScroll();
-      animateBall();
+      calcScrollState();
+      tick();
     });
   </script>
 </body>
