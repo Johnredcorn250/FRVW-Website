@@ -357,7 +357,7 @@ footer { background: var(--darker); border-top: 1px solid var(--border); padding
 
 /* ── RESPONSIVE ── */
 @media (max-width: 1100px) {
-  .hero-grid, .news-grid, .scores-grid, .competitions-grid, .calendar-grid, .teams-grid, .footer-top { grid-template-columns: 1fr 1fr; }
+  .hero-grid, .news-grid, .scores-grid, .competitions-grid, .calendar-grid, .teams-grid, .footer-top, .overview-grid, .gallery-grid { grid-template-columns: 1fr 1fr; }
   .hero-grid { align-items: start; }
   .hero-copy { max-width: 100%; }
   .footer-top { grid-template-columns: 2fr 1fr 1fr; }
@@ -366,7 +366,7 @@ footer { background: var(--darker); border-top: 1px solid var(--border); padding
   .nav-links, .nav-cta { display: none; }
   .hamburger { display: flex; }
   .hero { padding: 42px 0 56px; }
-  .hero-grid, .news-grid, .scores-grid, .competitions-grid, .calendar-grid, .teams-grid, .footer-top { grid-template-columns: 1fr; }
+  .hero-grid, .news-grid, .scores-grid, .competitions-grid, .calendar-grid, .teams-grid, .footer-top, .overview-grid, .gallery-grid { grid-template-columns: 1fr; }
   .hero-visual { min-height: 320px; }
   .visual-ring { width: 320px; height: 320px; }
   .hero-mini-card.top { top: 6px; left: 0; }
@@ -397,11 +397,11 @@ footer { background: var(--darker); border-top: 1px solid var(--border); padding
    ═══════════════════════════════════════════════════════════════════════════ */
 
 const TICKER_ITEMS = [
-  "#RNVL Playoffs Semis Game 5 — Police 1–3 Kepler",
-  "Rwanda Women qualify for CAVB Championship",
-  "National Volleyball League Finals — April 12, 2026",
-  "Valentine Munezero named MVP of the Month",
-  "Beach Volleyball National Team selection camp opens",
+  "FRVB established in 1984 and affiliated with CAVB and FIVB",
+  "Kigali to host the 47th CAVB Men's Club Championship — Apr 20 to May 3, 2026",
+  "Beach Volleyball National Tour continues to grow across Muhazi, Karongi, and Rwamagana",
+  "Youth competitions continue to strengthen Rwanda's talent pathway",
+  "Rwanda keeps building its profile as a host nation for African volleyball",
 ];
 
 const SCORES = [
@@ -450,89 +450,136 @@ const COMPETITIONS = [
   {
     id: 1,
     tag: "Featured Tournament",
-    title: "Africa Men's Club Championship 2026",
-    desc: "Kigali prepares to host one of the biggest club volleyball events on the continent, bringing elite competition and regional visibility to Rwanda.",
-    meta: ["Kigali", "International", "Men's Clubs"],
+    title: "47th CAVB Men's Club Championship",
+    desc: "Kigali is set to host the continental club championship from April 20 to May 3, 2026, with APR VC, Police VC, and Kepler VC representing Rwanda.",
+    meta: ["Kigali", "Apr 20 – May 3, 2026", "Continental Clubs"],
   },
   {
     id: 2,
     tag: "National League",
     title: "Rwanda National Volleyball League",
-    desc: "The country's top domestic competition featuring the strongest men's and women's clubs competing through regular season and playoffs.",
-    meta: ["Men & Women", "Season Ongoing", "League Format"],
+    desc: "FRVB's domestic structure includes national league competition for men's and women's clubs, alongside recurring tournaments that keep the calendar active across the season.",
+    meta: ["Men & Women", "Domestic Season", "FRVB Competition"],
   },
   {
     id: 3,
-    tag: "Development Pathway",
-    title: "Youth & Beach Volleyball Circuit",
-    desc: "A growing platform for identifying future national talent, strengthening grassroots development, and increasing nationwide participation.",
-    meta: ["Youth Focus", "Beach Volleyball", "Talent Growth"],
+    tag: "Beach Circuit",
+    title: "National Beach Volleyball Tour",
+    desc: "Recent FRVB beach tour stops in Muhazi and Rwamagana show the federation's growing investment in beach volleyball, athlete exposure, and fan-facing events.",
+    meta: ["Beach Volleyball", "National Tour", "Player Development"],
   },
 ];
 
 const NEWS_ITEMS = [
-  { id: 1, cat: "National Teams", headline: "Women's national side secures qualification and shifts focus to final camp preparation", date: "March 2026" },
-  { id: 2, cat: "League", headline: "Playoff intensity rises as title contenders separate themselves in decisive fixtures", date: "March 2026" },
-  { id: 3, cat: "Player Spotlight", headline: "Valentine Munezero earns monthly honors after standout performances", date: "March 2026" },
-  { id: 4, cat: "Development", headline: "Beach volleyball selection camp opens with focus on youth pipeline and national depth", date: "March 2026" },
+  { id: 1, cat: "Hosting", headline: "Kigali confirmed to stage the 47th CAVB Men's Club Championship in April–May 2026", date: "March 6, 2026" },
+  { id: 2, cat: "Youth", headline: "Isonga intercenter competitions highlighted Rwanda's rising volleyball talent in Nyanza", date: "February 9, 2026" },
+  { id: 3, cat: "Beach", headline: "Rwamagana stop of the FRVB Beach Volleyball National Tour crowned new winners in December 2025", date: "December 23, 2025" },
+  { id: 4, cat: "Beach", headline: "Muhazi season opener brought 23 pairs from five countries to the FRVB National Beach Volleyball Tour", date: "November 6, 2024" },
 ];
 
 const TEAMS = [
-  { id: 1, emoji: "🇷🇼", name: "Senior Men",   desc: "Elite national squad competing at continental and regional level.",         record: "14–6",      recordLabel: "Recent Record",     category: "senior" },
-  { id: 2, emoji: "🇷🇼", name: "Senior Women", desc: "National women's team building consistency and continental presence.",       record: "12–5",      recordLabel: "Recent Record",     category: "senior" },
-  { id: 3, emoji: "🌟",  name: "U21 Men",      desc: "Emerging talent pipeline with focus on transition to senior competition.",   record: "9–4",       recordLabel: "Development Cycle", category: "youth"  },
-  { id: 4, emoji: "🌟",  name: "U21 Women",    desc: "High-potential team preparing the next generation of national players.",     record: "10–3",      recordLabel: "Development Cycle", category: "youth"  },
-  { id: 5, emoji: "🚀",  name: "U19 Men",      desc: "Early-stage national prospects identified through domestic scouting.",       record: "Talent Pool", recordLabel: "Youth Program",   category: "youth"  },
-  { id: 6, emoji: "🚀",  name: "U19 Women",    desc: "Structured youth pathway feeding long-term high-performance plans.",         record: "Talent Pool", recordLabel: "Youth Program",   category: "youth"  },
-  { id: 7, emoji: "🏖️", name: "Beach Men",    desc: "Dedicated pairs program expanding Rwanda's presence in beach volleyball.",   record: "6 Events",  recordLabel: "Circuit Focus",     category: "beach"  },
-  { id: 8, emoji: "☀️",  name: "Beach Women",  desc: "Competitive beach unit with emphasis on rankings, selection, and exposure.", record: "4 Pairs",   recordLabel: "Active Squad",      category: "beach"  },
+  { id: 1, emoji: "🇷🇼", name: "Senior Men",   desc: "Rwanda's senior men's indoor program represents the country in regional and continental competition.", record: "National Team", recordLabel: "Indoor Program", category: "senior" },
+  { id: 2, emoji: "🇷🇼", name: "Senior Women", desc: "The senior women's side forms part of Rwanda's international presence under FRVB and CAVB competition pathways.", record: "National Team", recordLabel: "Indoor Program", category: "senior" },
+  { id: 3, emoji: "🌟",  name: "Youth Boys",   desc: "Youth structures and intercenter events are helping identify and prepare the next generation of volleyball talent.", record: "Talent Pathway", recordLabel: "Youth Development", category: "youth"  },
+  { id: 4, emoji: "🌟",  name: "Youth Girls",  desc: "School and youth competition remains a major entry point for athlete growth and national scouting.", record: "Talent Pathway", recordLabel: "Youth Development", category: "youth"  },
+  { id: 5, emoji: "🏖️", name: "Beach Men",    desc: "Rwanda's men's beach program benefits from FRVB tour stops, selection camps, and international exposure.", record: "Active Circuit", recordLabel: "Beach Program", category: "beach"  },
+  { id: 6, emoji: "☀️",  name: "Beach Women",  desc: "The women's beach unit continues to gain visibility through domestic tour events and continental participation.", record: "Active Circuit", recordLabel: "Beach Program", category: "beach"  },
 ];
 
 const CALENDAR = [
   {
     id: 1,
-    date: "Apr 12, 2026",
-    title: "National Volleyball League Finals",
-    desc: "Championship finals expected to bring the strongest domestic clubs together in Kigali.",
-    meta: ["📍 Kigali", "🕒 Full-day event"],
+    date: "Apr 20 – May 3, 2026",
+    title: "47th CAVB Men's Club Championship",
+    desc: "Kigali will host a landmark edition of the continental club championship, the first time the tournament is staged in Sub-Saharan Africa.",
+    meta: ["📍 Kigali", "🌍 Continental event"],
   },
   {
     id: 2,
-    date: "Apr 18, 2026",
-    title: "Beach Volleyball Selection Camp",
-    desc: "Open selection and evaluation session for athletes targeting national beach competition opportunities.",
-    meta: ["📍 Training Venue TBA", "🕒 Morning Session"],
+    date: "2026 Season",
+    title: "Rwanda National Volleyball League",
+    desc: "Domestic men's and women's league competition remains the backbone of the annual volleyball calendar and club ecosystem.",
+    meta: ["📍 Nationwide", "🏐 Indoor season"],
   },
   {
     id: 3,
-    date: "May 2026",
-    title: "Africa Men's Club Championship",
-    desc: "International competition hosted in Kigali, showcasing top club teams across the continent.",
-    meta: ["📍 Kigali", "🎟️ Ticketing to open soon"],
+    date: "Beach Tour Stops",
+    title: "FRVB National Beach Volleyball Tour",
+    desc: "Successive tour stops in Muhazi, Karongi, and Rwamagana highlight the beach circuit's growing role in Rwanda's volleyball story.",
+    meta: ["🏖️ Beach circuit", "📈 Athlete exposure"],
   },
 ];
 
 const ABOUT_CARDS = [
   {
     id: 1,
-    tag: "Mission",
-    title: "Grow the game nationally",
-    desc: "Promote inclusive participation, strengthen the competition ecosystem, and create pathways from grassroots to elite performance.",
-    meta: ["Development", "Access"],
+    tag: "History",
+    title: "Volleyball has deep roots in Rwanda",
+    desc: "According to the Rwanda Olympic Committee, volleyball spread through schools, military camps, and communities before FRVB was established in 1984 and affiliated the same year to CAVB and FIVB.",
+    meta: ["Established 1984", "FIVB", "CAVB"],
   },
   {
     id: 2,
-    tag: "Performance",
-    title: "Build stronger national teams",
-    desc: "Support scouting, training, competition exposure, and long-term player progression across age groups and disciplines.",
-    meta: ["Elite Pathways", "Preparation"],
+    tag: "Growth",
+    title: "Rwanda keeps expanding its volleyball footprint",
+    desc: "Rwanda has hosted major continental events in indoor and beach volleyball, helping position Kigali and other venues as important competition hubs.",
+    meta: ["Hosting Nation", "Kigali", "Beach & Indoor"],
   },
   {
     id: 3,
-    tag: "Visibility",
-    title: "Modernize volleyball communication",
-    desc: "Deliver a digital-first federation presence with better storytelling, live updates, competition coverage, and fan engagement.",
-    meta: ["Media", "Fan Experience"],
+    tag: "Future",
+    title: "Development is moving in multiple directions",
+    desc: "League play, youth competitions, and the beach tour all create a stronger performance pipeline while giving fans more entry points into the sport.",
+    meta: ["Youth", "League", "Beach Tour"],
+  },
+];
+
+const RWANDA_OVERVIEW = {
+  title: "Volleyball in Rwanda is growing through league play, hosting power, and beach momentum.",
+  body: "Volleyball in Rwanda has grown from a school- and community-based sport into one of the country's most visible team disciplines. FRVB oversees national competitions, national team pathways, and a growing beach volleyball ecosystem while Rwanda continues to build a reputation for hosting major African events.",
+  pills: ["FRVB", "Indoor Volleyball", "Beach Volleyball", "Youth Development"],
+  meta: ["Based in Kigali", "National federation role", "Domestic and international events"],
+};
+
+const RWANDA_HIGHLIGHTS = [
+  {
+    id: 1,
+    title: "Global & continental affiliation",
+    desc: "FRVB is part of both FIVB and CAVB, linking Rwandan volleyball to continental qualification pathways, courses, and sanctioned competition.",
+    meta: ["FIVB", "CAVB", "International pathway"],
+  },
+  {
+    id: 2,
+    title: "A proven host nation",
+    desc: "Rwanda hosted the 2021 Men's African Nations Championship in Kigali and is preparing for the 2026 CAVB Men's Club Championship.",
+    meta: ["Kigali", "Continental hosting", "2021 & 2026"],
+  },
+];
+
+const GALLERY_ITEMS = [
+  {
+    id: 1,
+    tag: "Indoor Volleyball",
+    title: "Add a hero photo from a national league match",
+    desc: "Use a wide action shot from a packed indoor match to immediately show energy, scale, and club competition.",
+    placeholder: "MATCHDAY PHOTO",
+    note: "Recommended image: horizontal action photo, 1600×1200 or larger.",
+  },
+  {
+    id: 2,
+    tag: "Beach Volleyball",
+    title: "Show Rwanda's beach volleyball identity",
+    desc: "Highlight the national beach tour with a sand court image from Muhazi, Karongi, or Rwamagana to make this part of the site feel unique.",
+    placeholder: "BEACH TOUR IMAGE",
+    note: "Recommended image: athlete serve, rally, or podium shot.",
+  },
+  {
+    id: 3,
+    tag: "Youth Development",
+    title: "Include a schools or youth development image",
+    desc: "A training or competition photo with younger athletes helps communicate long-term growth and the federation's development focus.",
+    placeholder: "YOUTH PROGRAM PHOTO",
+    note: "Recommended image: coaching, drills, or intercenter competition.",
   },
 ];
 
@@ -605,6 +652,26 @@ function CalendarCard({ event }) {
       <p>{event.desc}</p>
       <div className="calendar-meta">
         {event.meta.map((m) => <span key={m}>{m}</span>)}
+      </div>
+    </article>
+  );
+}
+
+
+function GalleryCard({ item }) {
+  return (
+    <article className="gallery-card">
+      <div className="gallery-image">
+        <div>
+          {item.placeholder}
+          <small>Replace this block with your real image later</small>
+        </div>
+      </div>
+      <div className="gallery-content">
+        <span className="gallery-tag">{item.tag}</span>
+        <h3>{item.title}</h3>
+        <p>{item.desc}</p>
+        <div className="gallery-note">{item.note}</div>
       </div>
     </article>
   );
@@ -991,6 +1058,55 @@ export default function FRVBWebsite() {
           </div>
         </section>
 
+
+        {/* ── RWANDA OVERVIEW ── */}
+        <section className="overview-section reveal" id="rwanda-volleyball">
+          <div className="container">
+            <div className="section-head">
+              <div>
+                <div className="section-label">Volleyball in Rwanda</div>
+                <h2 className="section-title">Why the sport matters here</h2>
+              </div>
+              <p className="section-subtitle">
+                A quick snapshot of the federation's role, Rwanda's hosting profile, and the momentum behind indoor and beach volleyball.
+              </p>
+            </div>
+
+            <div className="overview-grid">
+              <article className="overview-story">
+                <div className="overview-kicker">🇷🇼 Federation Snapshot</div>
+                <h3>{RWANDA_OVERVIEW.title}</h3>
+                <p>{RWANDA_OVERVIEW.body}</p>
+                <div className="overview-pills">
+                  {RWANDA_OVERVIEW.pills.map((pill) => <span key={pill}>{pill}</span>)}
+                </div>
+                <div className="overview-stats">
+                  <div className="overview-stat">
+                    <strong>1984</strong>
+                    <span>FRVB established</span>
+                  </div>
+                  <div className="overview-stat">
+                    <strong>2026</strong>
+                    <span>CAVB club hosts in Kigali</span>
+                  </div>
+                </div>
+              </article>
+
+              <div className="overview-side">
+                {RWANDA_HIGHLIGHTS.map((item) => (
+                  <article className="overview-side-card" key={item.id}>
+                    <h4>{item.title}</h4>
+                    <p>{item.desc}</p>
+                    <div className="overview-meta">
+                      {item.meta.map((m) => <span key={m}>{m}</span>)}
+                    </div>
+                  </article>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* ── NEWS ── */}
         <section className="news-section reveal" id="news">
           <div className="container">
@@ -1026,6 +1142,25 @@ export default function FRVBWebsite() {
                   </article>
                 ))}
               </div>
+            </div>
+          </div>
+        </section>
+
+
+        {/* ── GALLERY ── */}
+        <section className="gallery-section reveal" id="gallery">
+          <div className="container">
+            <div className="section-head">
+              <div>
+                <div className="section-label">Media Section</div>
+                <h2 className="section-title">Photo Gallery Placeholders</h2>
+              </div>
+              <p className="section-subtitle">
+                These cards are ready for you to replace with real federation, league, beach, or youth photos as you collect them.
+              </p>
+            </div>
+            <div className="gallery-grid">
+              {GALLERY_ITEMS.map((item) => <GalleryCard key={item.id} item={item} />)}
             </div>
           </div>
         </section>
@@ -1090,7 +1225,7 @@ export default function FRVBWebsite() {
               </div>
               <p className="section-subtitle">
                 The Rwanda Volleyball Federation supports competition, athlete development, national
-                representation, and the growth of volleyball across the country.
+                representation, and the growth of volleyball across the country, with its head office listed at Amahoro Stadium in Kigali.
               </p>
             </div>
             <div className="competitions-grid">
@@ -1142,8 +1277,8 @@ export default function FRVBWebsite() {
               <h4>Federation</h4>
               <ul>
                 <li><a href="#about">About FRVB</a></li>
-                <li><a href="#">Governance</a></li>
-                <li><a href="#">Clubs</a></li>
+                <li><a href="#rwanda-volleyball">Volleyball in Rwanda</a></li>
+                <li><a href="#gallery">Photo Gallery</a></li>
                 <li><a href="#">Media Centre</a></li>
               </ul>
             </div>
@@ -1152,10 +1287,10 @@ export default function FRVBWebsite() {
             <div className="footer-col">
               <h4>Contact</h4>
               <ul>
-                <li><a href="#">Kigali, Rwanda</a></li>
+                <li><a href="#">Amahoro Stadium, Remera, Kigali</a></li>
                 <li><a href="#">info@frvb.rw</a></li>
-                <li><a href="#">+250 XXX XXX XXX</a></li>
-                <li><a href="#">Office Hours</a></li>
+                <li><a href="#">+250 788 561 785</a></li>
+                <li><a href="#">FRVB Headquarters</a></li>
               </ul>
             </div>
           </div>
