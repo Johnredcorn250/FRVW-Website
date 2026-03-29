@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FRVB — Rwanda Volleyball Federation</title>
+
+  <style>
+    body { margin:0; font-family: Arial, sans-serif; background:#0A0D14; color:white; }
+    a { color:inherit; text-decoration:none; }
+
+    nav {
+      position:fixed;
+      top:0; left:0; right:0;
+      height:60px;
+      background:#060810;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding:0 20px;
+      border-bottom:1px solid rgba(255,255,255,0.1);
+      z-index:1000;
+    }
+
+    .nav-links { display:flex; gap:20px; }
+    .nav-links a { color:#aaa; font-weight:bold; }
+    .nav-links a:hover { color:white; }
+
+    .hamburger {
+      display:none;
+      flex-direction:column;
+      gap:4px;
+      cursor:pointer;
+    }
+
+    .hamburger div {
+      width:25px;
+      height:3px;
+      background:white;
+    }
+
+    .mobile-nav {
+      display:none;
+      flex-direction:column;
+      position:fixed;
+      top:60px;
+      left:0;
+      right:0;
+      background:#060810;
+      padding:20px;
+    }
+
+    .mobile-nav a {
+      padding:10px 0;
+      border-bottom:1px solid rgba(255,255,255,0.1);
+    }
+
+    .hero {
+      margin-top:60px;
+      padding:60px 20px;
+      text-align:center;
+    }
+
+    .section {
+      padding:60px 20px;
+    }
+
+    .teams-grid {
+      display:grid;
+      grid-template-columns:repeat(auto-fit, minmax(200px,1fr));
+      gap:16px;
+    }
+
+    .team-card {
+      background:#13182B;
+      padding:20px;
+      border-radius:10px;
+      cursor:pointer;
+      transition:0.2s;
+    }
+
+    .team-card:hover {
+      transform:translateY(-5px);
+      border:1px solid #003DA5;
+    }
+
+    /* Modal */
+    .modal {
+      display:none;
+      position:fixed;
+      top:0; left:0;
+      width:100%; height:100%;
+      background:rgba(0,0,0,0.7);
+      align-items:center;
+      justify-content:center;
+    }
+
+    .modal-content {
+      background:#13182B;
+      padding:20px;
+      border-radius:10px;
+      width:90%;
+      max-width:400px;
+    }
+
+    button {
+      margin-top:15px;
+      padding:10px 15px;
+      border:none;
+      background:#FFD100;
+      cursor:pointer;
+      font-weight:bold;
+    }
+
+    @media(max-width:768px){
+      .nav-links { display:none; }
+      .hamburger { display:flex; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div><strong>FRVB</strong></div>
+  <div class="nav-links">
+    <a href="#teams">Teams</a>
+    <a href="#">News</a>
+    <a href="#">About</a>
+  </div>
+  <div class="hamburger" id="hamburger">
+    <div></div><div></div><div></div>
+  </div>
+</nav>
+
+<div class="mobile-nav" id="mobileNav">
+  <a href="#teams">Teams</a>
+  <a href="#">News</a>
+  <a href="#">About</a>
+</div>
+
+<section class="hero">
+  <h1>Rwanda Volleyball Federation</h1>
+  <p>Official platform for teams, matches, and news.</p>
+</section>
+
+<section class="section" id="teams">
+  <h2>Teams</h2>
+  <div class="teams-grid">
+
+    <div class="team-card" onclick="openTeam('APR Volleyball Club','Top competitive club in Rwanda.')">
+      <h3>APR VC</h3>
+    </div>
+
+    <div class="team-card" onclick="openTeam('REG Volleyball','Rwanda Energy Group team.')">
+      <h3>REG VC</h3>
+    </div>
+
+    <div class="team-card" onclick="openTeam('Police VC','Strong defensive team.')">
+      <h3>Police VC</h3>
+    </div>
+
+  </div>
+</section>
+
+<!-- Modal -->
+<div class="modal" id="modal">
+  <div class="modal-content">
+    <h3 id="modalTitle"></h3>
+    <p id="modalText"></p>
+    <button onclick="closeModal()">Close</button>
+  </div>
+</div>
+
+<script>
+  // Mobile nav toggle
+  const hamburger = document.getElementById('hamburger');
+  const mobileNav = document.getElementById('mobileNav');
+
+  hamburger.onclick = () => {
+    mobileNav.style.display = mobileNav.style.display === 'flex' ? 'none' : 'flex';
+  };
+
+  // Modal logic
+  const modal = document.getElementById('modal');
+  const modalTitle = document.getElementById('modalTitle');
+  const modalText = document.getElementById('modalText');
+
+  function openTeam(name, desc){
+    modalTitle.textContent = name;
+    modalText.textContent = desc;
+    modal.style.display = 'flex';
+  }
+
+  function closeModal(){
+    modal.style.display = 'none';
+  }
+
+  window.onclick = function(e){
+    if(e.target === modal){
+      closeModal();
+    }
+  }
+</script>
+
+</body>
+</html>
