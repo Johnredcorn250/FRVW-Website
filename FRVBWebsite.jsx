@@ -7,28 +7,28 @@ const CSS = `
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400&display=swap');
 
 :root {
-  --blue: #003da5;
-  --blue-2: #0d58d7;
-  --gold: #ffd100;
-  --green: #009a44;
-  --red: #e8112d;
-  --dark: #0a0d14;
-  --darker: #060810;
-  --mid: #13182b;
-  --soft: #181f35;
-  --glass: rgba(255, 255, 255, 0.05);
-  --glass-2: rgba(255, 255, 255, 0.08);
-  --border: rgba(255, 255, 255, 0.09);
-  --text: #f0f4ff;
-  --muted: rgba(240, 244, 255, 0.64);
-  --shadow: 0 16px 40px rgba(0, 0, 0, 0.28);
+  --blue: #2066d1;
+  --blue-2: #4a8cff;
+  --gold: #f7c500;
+  --green: #1aa35c;
+  --red: #e24a4a;
+  --dark: #f7fbff;
+  --darker: #edf5ff;
+  --mid: #ffffff;
+  --soft: #eef4ff;
+  --glass: rgba(255, 255, 255, 0.72);
+  --glass-2: rgba(255, 255, 255, 0.9);
+  --border: rgba(0, 61, 165, 0.12);
+  --text: #11315f;
+  --muted: rgba(17, 49, 95, 0.68);
+  --shadow: 0 16px 40px rgba(0, 61, 165, 0.10);
   --radius: 16px;
   --max-width: 1240px;
   --nav-height: 72px;
 }
 * { margin: 0; padding: 0; box-sizing: border-box; }
 html { scroll-behavior: smooth; }
-body { background: var(--dark); color: var(--text); font-family: "Barlow", sans-serif; overflow-x: hidden; }
+body { background: linear-gradient(180deg, #f8fbff 0%, #edf4ff 100%); color: var(--text); font-family: "Barlow", sans-serif; overflow-x: hidden; }
 body.menu-open { overflow: hidden; }
 a { color: inherit; text-decoration: none; }
 img { max-width: 100%; display: block; }
@@ -59,7 +59,7 @@ button { font: inherit; }
 nav {
   position: sticky; top: 0; z-index: 1000;
   height: var(--nav-height);
-  background: rgba(10,13,20,0.92);
+  background: rgba(255,255,255,0.92);
   backdrop-filter: blur(14px);
   border-bottom: 1px solid var(--border);
 }
@@ -72,7 +72,7 @@ nav {
 .logo-badge {
   width: 44px; height: 44px; border-radius: 10px;
   border: 2px solid var(--gold);
-  background: linear-gradient(135deg, var(--blue), #0b4ec6);
+  background: linear-gradient(135deg, var(--blue), var(--blue-2));
   display: grid; place-items: center;
   font-family: "Bebas Neue", sans-serif;
   font-size: 16px; color: var(--gold); letter-spacing: 1px;
@@ -133,9 +133,10 @@ nav {
   display: flex; align-items: center;
   padding: 48px 0 72px;
   background:
-    radial-gradient(ellipse at 75% 30%, rgba(0,61,165,0.32), transparent 45%),
-    radial-gradient(ellipse at 20% 90%, rgba(0,154,68,0.18), transparent 40%),
-    linear-gradient(to bottom, var(--darker) 0%, #0d1424 100%);
+    radial-gradient(ellipse at 75% 25%, rgba(32,102,209,0.18), transparent 45%),
+    radial-gradient(ellipse at 20% 85%, rgba(26,163,92,0.14), transparent 40%),
+    radial-gradient(circle at 50% 10%, rgba(247,197,0,0.12), transparent 30%),
+    linear-gradient(to bottom, #f7fbff 0%, #e9f2ff 100%);
 }
 .hero-grid {
   width: min(100% - 40px, var(--max-width));
@@ -150,7 +151,7 @@ nav {
 .hero-label {
   display: inline-flex; align-items: center; gap: 8px;
   border: 1px solid rgba(232,17,45,0.28);
-  background: rgba(232,17,45,0.12); color: #ff8290;
+  background: rgba(226,74,74,0.08); color: #bb3b45;
   padding: 7px 14px; border-radius: 999px;
   font-size: 12px; font-weight: 700; margin-bottom: 18px;
   animation: fadeUp 0.55s ease both;
@@ -166,10 +167,10 @@ nav {
 .hero-desc { font-size: 17px; line-height: 1.7; color: var(--muted); max-width: 620px; margin-bottom: 28px; animation: fadeUp 0.55s 0.16s ease both; }
 .hero-btns { display: flex; flex-wrap: wrap; gap: 14px; margin-bottom: 30px; animation: fadeUp 0.55s 0.24s ease both; }
 .btn-primary { background: linear-gradient(135deg, var(--blue), var(--blue-2)); color: var(--text); padding: 15px 24px; border-radius: 10px; font-size: 14px; font-weight: 800; box-shadow: var(--shadow); }
-.btn-outline { border: 1px solid var(--glass-2); color: var(--text); padding: 15px 24px; border-radius: 10px; font-size: 14px; font-weight: 800; background: rgba(255,255,255,0.02); }
+.btn-outline { border: 1px solid var(--glass-2); color: var(--text); padding: 15px 24px; border-radius: 10px; font-size: 14px; font-weight: 800; background: rgba(255,255,255,0.72); }
 .btn-outline:hover { border-color: var(--gold); }
 .hero-stats { display: flex; gap: 18px; flex-wrap: wrap; animation: fadeUp 0.55s 0.32s ease both; }
-.stat-item { min-width: 140px; padding: 16px 18px; border-radius: 14px; border: 1px solid var(--border); background: rgba(255,255,255,0.04); }
+.stat-item { min-width: 140px; padding: 16px 18px; border-radius: 14px; border: 1px solid var(--border); background: rgba(255,255,255,0.72); }
 .stat-num { font-family: "Bebas Neue", sans-serif; font-size: 42px; line-height: 1; color: var(--gold); }
 .stat-label { font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: 1.2px; margin-top: 4px; }
 
@@ -183,7 +184,7 @@ nav {
   background:
     radial-gradient(circle at 30% 30%, rgba(255,255,255,0.16), transparent 28%),
     radial-gradient(circle at 50% 50%, rgba(255,209,0,0.13), transparent 55%);
-  border: 1px solid rgba(255,255,255,0.06);
+  border: 1px solid rgba(32,102,209,0.10);
   filter: blur(1px);
 }
 .volleyball {
@@ -192,9 +193,16 @@ nav {
   will-change: transform;
   animation: floatBall 5s ease-in-out infinite;
   z-index: 1;
-  cursor: none;
+  cursor: pointer;
 }
 .volleyball svg { width: 100%; height: auto; display: block; }
+.volleyball:hover { filter: drop-shadow(0 14px 28px rgba(32, 102, 209, 0.18)); }
+.volleyball.burst {
+  animation:
+    floatBall 5s ease-in-out infinite,
+    ballPop 0.45s ease;
+  filter: drop-shadow(0 22px 36px rgba(32, 102, 209, 0.24));
+}
 .ball-cursor {
   position: absolute; width: 12px; height: 12px;
   border-radius: 50%; background: var(--gold);
@@ -207,7 +215,7 @@ nav {
 .hero-mini-card {
   position: absolute;
   border: 1px solid var(--border);
-  background: rgba(9,12,20,0.82);
+  background: rgba(255, 255, 255, 0.86);
   backdrop-filter: blur(12px);
   border-radius: 14px; padding: 14px 16px;
   box-shadow: var(--shadow); min-width: 160px;
@@ -256,7 +264,7 @@ main section { padding: 84px 0; }
 .live-badge, .upcoming-badge, .completed-badge { font-size: 10px; font-weight: 900; letter-spacing: 1px; padding: 4px 10px; border-radius: 999px; text-transform: uppercase; }
 .live-badge { background: var(--red); color: #fff; }
 .upcoming-badge { background: var(--blue); color: #fff; }
-.completed-badge { background: rgba(255,255,255,0.05); color: var(--muted); border: 1px solid var(--border); }
+.completed-badge { background: rgba(32,102,209,0.06); color: var(--muted); border: 1px solid var(--border); }
 .score-teams { display: flex; align-items: center; justify-content: space-between; gap: 14px; margin-bottom: 14px; }
 .team-info { flex: 1; }
 .team-info.right { text-align: right; }
@@ -275,7 +283,7 @@ main section { padding: 84px 0; }
 .competition-card h3 { font-size: 22px; line-height: 1.15; margin-bottom: 10px; }
 .competition-card p { color: var(--muted); line-height: 1.65; font-size: 14px; margin-bottom: 18px; }
 .competition-meta { display: flex; flex-wrap: wrap; gap: 10px; }
-.competition-meta span { font-size: 12px; color: var(--text); background: rgba(255,255,255,0.04); border: 1px solid var(--border); border-radius: 999px; padding: 7px 11px; }
+.competition-meta span { font-size: 12px; color: var(--text); background: rgba(32,102,209,0.06); border: 1px solid var(--border); border-radius: 999px; padding: 7px 11px; }
 
 /* ── NEWS ── */
 .news-grid { grid-template-columns: 1.5fr 1fr; align-items: stretch; }
@@ -338,6 +346,12 @@ footer { background: var(--darker); border-top: 1px solid var(--border); padding
 @keyframes floatBall {
   0%, 100% { transform: translate3d(0, 0, 0) rotateZ(0deg); }
   50%       { transform: translate3d(0, -16px, 0) rotateZ(6deg); }
+}
+@keyframes ballPop {
+  0% { transform: scale(1); }
+  35% { transform: scale(1.08); }
+  70% { transform: scale(0.94); }
+  100% { transform: scale(1); }
 }
 @keyframes tickerScroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
 
@@ -667,10 +681,12 @@ function VolleyballSVG() {
 export default function FRVBWebsite() {
   const [menuOpen, setMenuOpen]   = useState(false);
   const [activeTab, setActiveTab] = useState("all");
+  const [ballBurst, setBallBurst] = useState(false);
 
   const heroBallRef   = useRef(null);
   const heroVisualRef = useRef(null);
   const ballCursorRef = useRef(null);
+  const ballClickTimeoutRef = useRef(null);
   const msRef = useRef({
     mouseRotX: 0, mouseRotY: 0, mouseRotZ: 0,
     targetRotX: 0, targetRotY: 0, targetRotZ: 0,
@@ -760,6 +776,33 @@ export default function FRVBWebsite() {
       if (ms.rafId) cancelAnimationFrame(ms.rafId);
     };
   }, []);
+
+  useEffect(() => {
+    return () => {
+      if (ballClickTimeoutRef.current) {
+        clearTimeout(ballClickTimeoutRef.current);
+      }
+    };
+  }, []);
+
+  const handleBallClick = () => {
+    const ms = msRef.current;
+
+    setBallBurst(false);
+    requestAnimationFrame(() => setBallBurst(true));
+
+    ms.targetRotY += 24;
+    ms.targetRotX -= 10;
+    ms.targetRotZ += 18;
+
+    if (ballClickTimeoutRef.current) {
+      clearTimeout(ballClickTimeoutRef.current);
+    }
+
+    ballClickTimeoutRef.current = setTimeout(() => {
+      setBallBurst(false);
+    }, 450);
+  };
 
   const filtered  = activeTab === "all" ? TEAMS : TEAMS.filter((t) => t.category === activeTab);
   const closeMenu = () => setMenuOpen(false);
@@ -873,7 +916,20 @@ export default function FRVBWebsite() {
 
             <div className="ball-cursor" ref={ballCursorRef} />
 
-            <div className="volleyball" ref={heroBallRef}>
+            <div
+              className={`volleyball${ballBurst ? " burst" : ""}`}
+              ref={heroBallRef}
+              onClick={handleBallClick}
+              role="button"
+              tabIndex={0}
+              onKeyDown={(e) => {
+                if (e.key === "Enter" || e.key === " ") {
+                  e.preventDefault();
+                  handleBallClick();
+                }
+              }}
+              aria-label="Interactive volleyball"
+            >
               <VolleyballSVG />
             </div>
 
