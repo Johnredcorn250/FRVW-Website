@@ -7,7 +7,7 @@ const CSS = `
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400&display=swap');
 :root {
   --blue: #2066d1;
-  --blue-2: #4a8cff;
+  --blue-2: #4a8cff
   --gold: #f7c500;
   --green: #1aa35c;
   --red: #e24a4a;
@@ -531,7 +531,7 @@ function ScoreCard({ score }) {
 function CompetitionCard({ comp }) {
   return (
     <article className="competition-card">
-      <span className="competition-tag"import { useState, useEffect, useRef } from "react";
+      <span className="competition-tag">
 
 /* ═══════════════════════════════════════════════════════════════════════════
    GLOBAL CSS
