@@ -8,7 +8,7 @@ const CSS = `
 
 :root {
   --blue: #2066d1;
-  --blue-2: #4a8cff;
+  --yellow-2: #4a8cff;
   --gold: #f7c500;
   --green: #1aa35c;
   --red: #e24a4a;
