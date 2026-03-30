@@ -450,19 +450,19 @@ const COMPETITIONS = [
 ];
 
 const NEWS_ITEMS = [
-  { id: 1, cat: "Hosting", headline: "Kigali confirmed to stage the 47th CAVB Men's Club Championship in April–May 2026", date: "March 6, 2026" },
-  { id: 2, cat: "Youth", headline: "Isonga intercenter competitions highlighted Rwanda's rising volleyball talent in Nyanza", date: "February 9, 2026" },
-  { id: 3, cat: "Beach", headline: "Rwamagana stop of the FRVB Beach Volleyball National Tour crowned new winners in December 2025", date: "December 23, 2025" },
-  { id: 4, cat: "Beach", headline: "Muhazi season opener brought 23 pairs from five countries to the FRVB National Beach Volleyball Tour", date: "November 6, 2024" },
+  { id: 1, cat: "Hosting",  headline: "Kigali confirmed to stage the 47th CAVB Men's Club Championship in April–May 2026", date: "March 6, 2026",    image: "https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=400&h=260&fit=crop&auto=format" },
+  { id: 2, cat: "Youth",    headline: "Isonga intercenter competitions highlighted Rwanda's rising volleyball talent in Nyanza",                   date: "February 9, 2026",  image: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400&h=260&fit=crop&auto=format" },
+  { id: 3, cat: "Beach",    headline: "Rwamagana stop of the FRVB Beach Volleyball National Tour crowned new winners in December 2025",             date: "December 23, 2025", image: "https://images.unsplash.com/photo-1612872087720-bb876e2e67d1?w=400&h=260&fit=crop&auto=format" },
+  { id: 4, cat: "Beach",    headline: "Muhazi season opener brought 23 pairs from five countries to the FRVB National Beach Volleyball Tour",       date: "November 6, 2024",  image: "https://images.unsplash.com/photo-1544991875-5dc1b05f5869?w=400&h=260&fit=crop&auto=format" },
 ];
 
 const TEAMS = [
-  { id: 1, emoji: "🇷🇼", name: "Senior Men",   desc: "Rwanda's senior men's indoor program represents the country in regional and continental competition.", record: "National Team", recordLabel: "Indoor Program", category: "senior" },
-  { id: 2, emoji: "🇷🇼", name: "Senior Women", desc: "The senior women's side forms part of Rwanda's international presence under FRVB and CAVB competition pathways.", record: "National Team", recordLabel: "Indoor Program", category: "senior" },
-  { id: 3, emoji: "🌟",  name: "Youth Boys",   desc: "Youth structures and intercenter events are helping identify and prepare the next generation of volleyball talent.", record: "Talent Pathway", recordLabel: "Youth Development", category: "youth" },
-  { id: 4, emoji: "🌟",  name: "Youth Girls",  desc: "School and youth competition remains a major entry point for athlete growth and national scouting.", record: "Talent Pathway", recordLabel: "Youth Development", category: "youth" },
-  { id: 5, emoji: "🏖️", name: "Beach Men",    desc: "Rwanda's men's beach program benefits from FRVB tour stops, selection camps, and international exposure.", record: "Active Circuit", recordLabel: "Beach Program", category: "beach" },
-  { id: 6, emoji: "☀️",  name: "Beach Women",  desc: "The women's beach unit continues to gain visibility through domestic tour events and continental participation.", record: "Active Circuit", recordLabel: "Beach Program", category: "beach" },
+  { id: 1, name: "APR Volleyball Club",    city: "Kigali", desc: "Army-backed club and perennial league champions, representing Rwanda in continental club competitions.", record: "League Champions", recordLabel: "Men's League", category: "men", color: "#003DA5" },
+  { id: 2, name: "REG Volleyball Club",    city: "Kigali", desc: "Rwanda Energy Group's volleyball arm — a competitive men's side known for strong national league performances.", record: "Top Division", recordLabel: "Men's League", category: "men", color: "#1aa35c" },
+  { id: 3, name: "Police Volleyball Club", city: "Kigali", desc: "Rwanda National Police's club — one of the most active teams in both men's and women's domestic competition.", record: "National League", recordLabel: "Men & Women", category: "men", color: "#e24a4a" },
+  { id: 4, name: "Kepler Volleyball Club", city: "Kigali", desc: "University-rooted club representing Rwanda in the 47th CAVB Men's Club Championship in 2026.", record: "CAVB 2026", recordLabel: "Continental", category: "men", color: "#f7c500" },
+  { id: 5, name: "IPRC Kigali VC",         city: "Kigali", desc: "Institut Polytechnique de Kigali's volleyball club — competing in the national women's league and youth programs.", record: "Women's League", recordLabel: "Women's Division", category: "women", color: "#7c3aed" },
+  { id: 6, name: "Gisagara VC",            city: "Gisagara", desc: "Southern Province club building on grassroots talent, competing in the national men's league.", record: "National League", recordLabel: "Men's League", category: "men", color: "#0891b2" },
 ];
 
 const CALENDAR = [
@@ -1072,10 +1072,48 @@ function CompetitionCard({ comp }) {
   );
 }
 
+function VolleyballIcon({ color = "#003DA5", size = 48 }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" style={{display:"block",margin:"0 auto"}}>
+      <circle cx="50" cy="50" r="46" fill="#f5f4f0" stroke={color} strokeWidth="2.5"/>
+      <g fill="none" strokeLinecap="round">
+        <path d="M50 6 C63 16 70 32 70 50 C70 68 63 84 50 94" stroke={color} strokeWidth="4"/>
+        <path d="M50 6 C37 16 30 32 30 50 C30 68 37 84 50 94" stroke={color} strokeWidth="4"/>
+        <path d="M6 50 C16 37 32 30 50 30 C68 30 84 37 94 50" stroke={color} strokeWidth="4"/>
+        <path d="M6 50 C16 63 32 70 50 70 C68 70 84 63 94 50" stroke={color} strokeWidth="4"/>
+      </g>
+      <ellipse cx="36" cy="30" rx="18" ry="11" fill="rgba(255,255,255,0.55)" transform="rotate(-28 36 30)"/>
+    </svg>
+  );
+}
+
+function FRVBLogo({ size = 44 }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 88 88" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="FRVB Rwanda Volleyball Federation Logo">
+      <path d="M44 4 L80 16 L80 52 C80 66 65 78 44 84 C23 78 8 66 8 52 L8 16 Z" fill="#003DA5"/>
+      <path d="M44 8 L76 19 L76 52 C76 64 63 75 44 81 C25 75 12 64 12 52 L12 19 Z" fill="none" stroke="#F7C500" strokeWidth="2.5"/>
+      <rect x="12" y="62" width="64" height="7" fill="#20BF6B"/>
+      <rect x="12" y="69" width="64" height="6" fill="#F7C500"/>
+      <circle cx="44" cy="36" r="18" fill="#f5f4f0" stroke="#F7C500" strokeWidth="1.5"/>
+      <g fill="none" strokeLinecap="round" stroke="#003DA5" strokeWidth="2.2">
+        <path d="M44 18 C49 22 52 28 52 36 C52 44 49 50 44 54"/>
+        <path d="M44 18 C39 22 36 28 36 36 C36 44 39 50 44 54"/>
+        <path d="M26 36 C30 31 37 28 44 28 C51 28 58 31 62 36"/>
+        <path d="M26 36 C30 41 37 44 44 44 C51 44 58 41 62 36"/>
+      </g>
+      <ellipse cx="38" cy="28" rx="8" ry="5" fill="rgba(255,255,255,0.5)" transform="rotate(-25 38 28)"/>
+      <text x="44" y="76" textAnchor="middle" fontFamily="'Bebas Neue',sans-serif" fontSize="11" fontWeight="900" fill="#F7C500" letterSpacing="2">FRVB</text>
+    </svg>
+  );
+}
+
 function TeamCard({ team }) {
   return (
-    <article className="team-card">
-      <span className="team-emoji">{team.emoji}</span>
+    <article className="team-card" style={{borderTop: `3px solid ${team.color || "var(--blue)"}`}}>
+      <div style={{marginBottom:"14px",paddingTop:"8px"}}>
+        <VolleyballIcon color={team.color || "#003DA5"} size={52}/>
+      </div>
+      <div style={{display:"inline-block",fontSize:"11px",fontWeight:"800",letterSpacing:"1px",textTransform:"uppercase",color:"#fff",background:team.color||"var(--blue)",borderRadius:"999px",padding:"3px 10px",marginBottom:"10px"}}>{team.city}</div>
       <h3>{team.name}</h3>
       <p>{team.desc}</p>
       <div className="team-record">{team.record}</div>
@@ -1288,7 +1326,7 @@ export default function FRVBWebsite() {
       <nav aria-label="Main navigation">
         <div className="nav-inner">
           <a href="#top" className="nav-logo" aria-label="FRVB Home">
-            <div className="logo-badge">FRVB</div>
+            <FRVBLogo size={44} />
             <div><div className="logo-text">FRVB</div><div className="logo-sub">Rwanda Volleyball</div></div>
           </a>
           <div className="nav-links">
@@ -1469,10 +1507,17 @@ export default function FRVBWebsite() {
               </article>
               <div className="news-list">
                 {NEWS_ITEMS.map((item) => (
-                  <article className="news-item" key={item.id}>
-                    <div className="news-item-cat">{item.cat}</div>
-                    <h4>{item.headline}</h4>
-                    <div className="news-item-date">{item.date}</div>
+                  <article className="news-item" key={item.id} style={{display:"flex",gap:"12px",alignItems:"flex-start"}}>
+                    {item.image && (
+                      <div style={{width:"72px",height:"56px",borderRadius:"8px",overflow:"hidden",flexShrink:0}}>
+                        <img src={item.image} alt={item.cat} style={{width:"100%",height:"100%",objectFit:"cover",display:"block"}} loading="lazy" />
+                      </div>
+                    )}
+                    <div style={{flex:1,minWidth:0}}>
+                      <div className="news-item-cat">{item.cat}</div>
+                      <h4>{item.headline}</h4>
+                      <div className="news-item-date">{item.date}</div>
+                    </div>
                   </article>
                 ))}
               </div>
@@ -1496,12 +1541,12 @@ export default function FRVBWebsite() {
           <div className="container">
             <div className="section-head">
               <div><div className="section-label">Programs &amp; Squads</div><h2 className="section-title">National Teams</h2></div>
-              <p className="section-subtitle">A structured national program spanning senior, youth, and beach volleyball categories.</p>
+              <p className="section-subtitle">Rwanda's top clubs competing in the national league and continental tournaments, under the oversight of the Rwanda Volleyball Federation.</p>
             </div>
             <div className="teams-tabs">
-              {["all", "senior", "youth", "beach"].map((tab) => (
+              {["all", "men", "women"].map((tab) => (
                 <button key={tab} className={`tab-btn${activeTab === tab ? " active" : ""}`} onClick={() => setActiveTab(tab)}>
-                  {tab === "all" ? "All Teams" : tab.charAt(0).toUpperCase() + tab.slice(1)}
+                  {tab === "all" ? "All Clubs" : tab === "men" ? "Men's Clubs" : "Women's Clubs"}
                 </button>
               ))}
             </div>
@@ -1539,7 +1584,7 @@ export default function FRVBWebsite() {
           <div className="footer-top">
             <div className="footer-brand">
               <div className="nav-logo">
-                <div className="logo-badge">FRVB</div>
+                <FRVBLogo size={44} />
                 <div><div className="footer-logo-text">FRVB</div><div className="footer-logo-sub">Rwanda Volleyball</div></div>
               </div>
               <p>The official digital home of the Rwanda Volleyball Federation — showcasing competitions, national teams, federation updates, and fan engagement.</p>
@@ -1817,7 +1862,7 @@ export default function FRVBWebsite() {
       <nav aria-label="Main navigation">
         <div className="nav-inner">
           <a href="#top" className="nav-logo" aria-label="FRVB Home">
-            <div className="logo-badge">FRVB</div>
+            <FRVBLogo size={44} />
             <div><div className="logo-text">FRVB</div><div className="logo-sub">Rwanda Volleyball</div></div>
           </a>
           <div className="nav-links">
@@ -2068,7 +2113,7 @@ export default function FRVBWebsite() {
           <div className="footer-top">
             <div className="footer-brand">
               <div className="nav-logo">
-                <div className="logo-badge">FRVB</div>
+                <FRVBLogo size={44} />
                 <div><div className="footer-logo-text">FRVB</div><div className="footer-logo-sub">Rwanda Volleyball</div></div>
               </div>
               <p>The official digital home of the Rwanda Volleyball Federation — showcasing competitions, national teams, federation updates, and fan engagement.</p>
